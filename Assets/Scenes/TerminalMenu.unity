@@ -201,7 +201,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 76927790}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1031913068}
+        m_TargetAssemblyTypeName: DrinkMenuUI, Assembly-CSharp
+        m_MethodName: AddDrink
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u041D\u0430\u043F\u0438\u0442\u043E\u043A 5"
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &76927790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -662,6 +674,7 @@ GameObject:
   - component: {fileID: 136387460}
   - component: {fileID: 136387462}
   - component: {fileID: 136387461}
+  - component: {fileID: 136387463}
   m_Layer: 5
   m_Name: TablePanel
   m_TagString: Untagged
@@ -740,6 +753,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 136387459}
   m_CullTransparentMesh: 1
+--- !u!114 &136387463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136387459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8cb072786d5c48be9be9b8f57e47b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TableMenuUI
+  nextPageBtn: {fileID: 328539298}
+  printBtn: {fileID: 1645649105}
 --- !u!1 &140896976
 GameObject:
   m_ObjectHideFlags: 0
@@ -773,8 +800,8 @@ RectTransform:
   m_Children:
   - {fileID: 725760879}
   - {fileID: 629200321}
-  - {fileID: 615972004}
   - {fileID: 1173247073}
+  - {fileID: 615972004}
   m_Father: {fileID: 1031913065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -789,7 +816,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 140896976}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -876,7 +903,7 @@ GameObject:
   - component: {fileID: 169486987}
   - component: {fileID: 169486986}
   m_Layer: 5
-  m_Name: Counter
+  m_Name: Counter1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1220,7 +1247,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 229398850}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 136387463}
+        m_TargetAssemblyTypeName: TableMenuUI, Assembly-CSharp
+        m_MethodName: SelectTable
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &229398850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1274,7 +1313,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!114 &266648316
 MonoBehaviour:
@@ -1289,8 +1328,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OrderManager
   selectedTable: -1
-  diskPrefab: {fileID: 0}
-  diskSpawnPoint: {fileID: 0}
+  CdTicketPrefab: {fileID: 4075985991336485579, guid: cb636192fb9bafb4b9b953b8f871c877,
+    type: 3}
+  CdTicketSpawnPoint: {fileID: 936176264}
+  mainPanel: {fileID: 1617160636}
+  drinkMenu: {fileID: 1031913064}
+  tableMenu: {fileID: 136387459}
 --- !u!4 &266648317
 Transform:
   m_ObjectHideFlags: 0
@@ -1299,13 +1342,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 266648315}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 499.99994, y: 500, z: 499.99994}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 1159078979}
+  m_LocalEulerAnglesHint: {x: 0, y: -42.928, z: 0}
 --- !u!1 &320744966
 GameObject:
   m_ObjectHideFlags: 0
@@ -1388,7 +1431,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 320744969}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 266648316}
+        m_TargetAssemblyTypeName: OrderManager, Assembly-CSharp
+        m_MethodName: PrintOrder
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &320744969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1605,8 +1660,8 @@ RectTransform:
   m_Children:
   - {fileID: 1640194844}
   - {fileID: 675348151}
-  - {fileID: 1065463348}
   - {fileID: 76927788}
+  - {fileID: 1065463348}
   m_Father: {fileID: 1031913065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1621,7 +1676,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 352359616}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -1915,7 +1970,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 385008257}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1031913068}
+        m_TargetAssemblyTypeName: DrinkMenuUI, Assembly-CSharp
+        m_MethodName: AddDrink
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u041D\u0430\u043F\u0438\u0442\u043E\u043A 4"
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &385008257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2036,7 +2103,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 391243939}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 136387463}
+        m_TargetAssemblyTypeName: TableMenuUI, Assembly-CSharp
+        m_MethodName: SelectTable
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 6
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &391243939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2116,13 +2195,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 427334186}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 499.99994, y: 500, z: 499.99994}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 1159078979}
+  m_LocalEulerAnglesHint: {x: 0, y: -42.928, z: 0}
 --- !u!114 &427334190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2381,7 +2460,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 520345786}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 136387463}
+        m_TargetAssemblyTypeName: TableMenuUI, Assembly-CSharp
+        m_MethodName: SelectTable
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &520345786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2569,7 +2660,7 @@ GameObject:
   - component: {fileID: 545822472}
   - component: {fileID: 545822471}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: DrinkName4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2727,8 +2818,8 @@ RectTransform:
   m_Children:
   - {fileID: 1513347935}
   - {fileID: 169486985}
-  - {fileID: 685717167}
   - {fileID: 2068094767}
+  - {fileID: 685717167}
   m_Father: {fileID: 1031913065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -2743,7 +2834,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 548807347}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -3067,8 +3158,8 @@ RectTransform:
   m_Children:
   - {fileID: 545822470}
   - {fileID: 1254919079}
-  - {fileID: 1910033076}
   - {fileID: 385008255}
+  - {fileID: 1910033076}
   m_Father: {fileID: 1031913065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -3083,7 +3174,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 604041366}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -3240,7 +3331,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 615972006}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1031913068}
+        m_TargetAssemblyTypeName: DrinkMenuUI, Assembly-CSharp
+        m_MethodName: RemoveDrink
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u041D\u0430\u043F\u0438\u0442\u043E\u043A 2"
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &615972006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3291,7 +3394,7 @@ GameObject:
   - component: {fileID: 629200323}
   - component: {fileID: 629200322}
   m_Layer: 5
-  m_Name: Counter
+  m_Name: Counter2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3565,7 +3668,7 @@ GameObject:
   - component: {fileID: 675348153}
   - component: {fileID: 675348152}
   m_Layer: 5
-  m_Name: Counter
+  m_Name: Counter5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3772,7 +3875,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 685717169}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1031913068}
+        m_TargetAssemblyTypeName: DrinkMenuUI, Assembly-CSharp
+        m_MethodName: RemoveDrink
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u041D\u0430\u043F\u0438\u0442\u043E\u043A 1"
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &685717169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4175,7 +4290,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 724714661}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 136387463}
+        m_TargetAssemblyTypeName: TableMenuUI, Assembly-CSharp
+        m_MethodName: SelectTable
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &724714661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4226,7 +4353,7 @@ GameObject:
   - component: {fileID: 725760881}
   - component: {fileID: 725760880}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: DrinkName2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4570,7 +4697,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 878713802}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 136387463}
+        m_TargetAssemblyTypeName: TableMenuUI, Assembly-CSharp
+        m_MethodName: SelectTable
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &878713802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4609,6 +4748,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 878713799}
   m_CullTransparentMesh: 1
+--- !u!1 &936176263
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 936176264}
+  m_Layer: 0
+  m_Name: CdTicketSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &936176264
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936176263}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: -662, z: -188}
+  m_LocalScale: {x: 499.99994, y: 500, z: 499.99994}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1159078979}
+  m_LocalEulerAnglesHint: {x: 0, y: -42.928, z: 0}
 --- !u!1 &991925898
 GameObject:
   m_ObjectHideFlags: 0
@@ -4829,10 +4999,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1031913064}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1031913068}
+        m_TargetAssemblyTypeName: DrinkMenuUI, Assembly-CSharp
+        m_MethodName: CloseMenu
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4961,7 +5131,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1015450339}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 136387463}
+        m_TargetAssemblyTypeName: TableMenuUI, Assembly-CSharp
+        m_MethodName: SelectTable
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 8
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1015450339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5137,133 +5319,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1020547652}
   m_CullTransparentMesh: 1
---- !u!1 &1026145881
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1026145884}
-  - component: {fileID: 1026145883}
-  - component: {fileID: 1026145882}
-  m_Layer: 0
-  m_Name: Directional Light
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1026145882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1026145881}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
-  m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
-  m_CustomShadowLayers: 0
-  m_LightCookieSize: {x: 1, y: 1}
-  m_LightCookieOffset: {x: 0, y: 0}
-  m_SoftShadowQuality: 0
-  m_RenderingLayersMask:
-    serializedVersion: 0
-    m_Bits: 1
-  m_ShadowRenderingLayersMask:
-    serializedVersion: 0
-    m_Bits: 1
-  m_Version: 4
-  m_LightLayerMask: 1
-  m_ShadowLayerMask: 1
-  m_RenderingLayers: 1
-  m_ShadowRenderingLayers: 1
---- !u!108 &1026145883
-Light:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1026145881}
-  m_Enabled: 1
-  serializedVersion: 12
-  m_Type: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
-  m_Range: 10
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 21.80208
-  m_CookieSize2D: {x: 0.5, y: 0.5}
-  m_Shadows:
-    m_Type: 0
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-    m_CullingMatrixOverride:
-      e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingLayerMask: 1
-  m_Lightmapping: 4
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
-  m_ForceVisible: 0
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
-  m_LightUnit: 1
-  m_LuxAtDistance: 1
-  m_EnableSpotReflector: 1
---- !u!4 &1026145884
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1026145881}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 1.07766, y: 0, z: 1.06089}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1031913064
 GameObject:
   m_ObjectHideFlags: 0
@@ -5275,6 +5330,7 @@ GameObject:
   - component: {fileID: 1031913065}
   - component: {fileID: 1031913067}
   - component: {fileID: 1031913066}
+  - component: {fileID: 1031913068}
   m_Layer: 5
   m_Name: DrinkPanel
   m_TagString: Untagged
@@ -5348,6 +5404,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1031913064}
   m_CullTransparentMesh: 1
+--- !u!114 &1031913068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031913064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bcdf455f9df1e44a86ce8c3ed5636f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DrinkMenuUI
+  nextPageBtn: {fileID: 720302284}
+  printBtn: {fileID: 320744966}
+  drinksUI:
+  - drinkName: "\u041D\u0430\u043F\u0438\u0442\u043E\u043A 1"
+    countText: {fileID: 169486986}
+  - drinkName: "\u041D\u0430\u043F\u0438\u0442\u043E\u043A 2"
+    countText: {fileID: 629200322}
+  - drinkName: "\u041D\u0430\u043F\u0438\u0442\u043E\u043A 3"
+    countText: {fileID: 2016752284}
+  - drinkName: "\u041D\u0430\u043F\u0438\u0442\u043E\u043A 4"
+    countText: {fileID: 1254919080}
+  - drinkName: "\u041D\u0430\u043F\u0438\u0442\u043E\u043A 5"
+    countText: {fileID: 675348152}
 --- !u!1 &1065463347
 GameObject:
   m_ObjectHideFlags: 0
@@ -5430,7 +5511,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1065463350}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1031913068}
+        m_TargetAssemblyTypeName: DrinkMenuUI, Assembly-CSharp
+        m_MethodName: RemoveDrink
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u041D\u0430\u043F\u0438\u0442\u043E\u043A 5"
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1065463350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5703,6 +5796,9 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 556902499}
+  - {fileID: 427334189}
+  - {fileID: 266648317}
+  - {fileID: 936176264}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -5890,7 +5986,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1173247075}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1031913068}
+        m_TargetAssemblyTypeName: DrinkMenuUI, Assembly-CSharp
+        m_MethodName: AddDrink
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u041D\u0430\u043F\u0438\u0442\u043E\u043A 2"
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1173247075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6489,7 +6597,7 @@ GameObject:
   - component: {fileID: 1254919081}
   - component: {fileID: 1254919080}
   m_Layer: 5
-  m_Name: Counter
+  m_Name: Counter4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6696,7 +6804,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1265955842}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1031913068}
+        m_TargetAssemblyTypeName: DrinkMenuUI, Assembly-CSharp
+        m_MethodName: RemoveDrink
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u041D\u0430\u043F\u0438\u0442\u043E\u043A 3"
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1265955842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7042,8 +7162,8 @@ RectTransform:
   m_Children:
   - {fileID: 1579254967}
   - {fileID: 2016752283}
-  - {fileID: 1265955840}
   - {fileID: 1868639747}
+  - {fileID: 1265955840}
   m_Father: {fileID: 1031913065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -7058,7 +7178,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1335278886}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -7419,7 +7539,7 @@ GameObject:
   - component: {fileID: 1513347937}
   - component: {fileID: 1513347936}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: DrinkName1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7626,7 +7746,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1554911071}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 136387463}
+        m_TargetAssemblyTypeName: TableMenuUI, Assembly-CSharp
+        m_MethodName: SelectTable
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 7
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1554911071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7884,7 +8016,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1566363385}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 136387463}
+        m_TargetAssemblyTypeName: TableMenuUI, Assembly-CSharp
+        m_MethodName: SelectTable
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1566363385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8005,7 +8149,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1570422613}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 136387463}
+        m_TargetAssemblyTypeName: TableMenuUI, Assembly-CSharp
+        m_MethodName: SelectTable
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 9
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1570422613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8056,7 +8212,7 @@ GameObject:
   - component: {fileID: 1579254969}
   - component: {fileID: 1579254968}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: DrinkName3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8192,8 +8348,9 @@ GameObject:
   - component: {fileID: 1617160637}
   - component: {fileID: 1617160639}
   - component: {fileID: 1617160638}
+  - component: {fileID: 1617160640}
   m_Layer: 5
-  m_Name: ManinPanel
+  m_Name: MainPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8259,6 +8416,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1617160636}
   m_CullTransparentMesh: 1
+--- !u!114 &1617160640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1617160636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ac5b590b9a56f349a46af829fc5495b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MainMenuUI
+  drinkMenu: {fileID: 1031913064}
+  tableMenu: {fileID: 136387459}
+  printBtn: {fileID: 1834529475}
 --- !u!1 &1640194843
 GameObject:
   m_ObjectHideFlags: 0
@@ -8271,7 +8443,7 @@ GameObject:
   - component: {fileID: 1640194846}
   - component: {fileID: 1640194845}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: DrinkName5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8478,7 +8650,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1645649108}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 266648316}
+        m_TargetAssemblyTypeName: OrderManager, Assembly-CSharp
+        m_MethodName: PrintOrder
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1645649108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9075,7 +9259,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1834529476
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9139,7 +9323,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1834529478}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 266648316}
+        m_TargetAssemblyTypeName: OrderManager, Assembly-CSharp
+        m_MethodName: PrintOrder
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1834529478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9260,7 +9456,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1868639749}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1031913068}
+        m_TargetAssemblyTypeName: DrinkMenuUI, Assembly-CSharp
+        m_MethodName: AddDrink
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u041D\u0430\u043F\u0438\u0442\u043E\u043A 3"
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1868639749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9655,7 +9863,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1910033078}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1031913068}
+        m_TargetAssemblyTypeName: DrinkMenuUI, Assembly-CSharp
+        m_MethodName: RemoveDrink
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u041D\u0430\u043F\u0438\u0442\u043E\u043A 4"
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1910033078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9776,7 +9996,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1916406763}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 136387463}
+        m_TargetAssemblyTypeName: TableMenuUI, Assembly-CSharp
+        m_MethodName: SelectTable
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1916406763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9964,7 +10196,7 @@ GameObject:
   - component: {fileID: 2016752285}
   - component: {fileID: 2016752284}
   m_Layer: 5
-  m_Name: Counter
+  m_Name: Counter3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10308,7 +10540,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2068094769}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1031913068}
+        m_TargetAssemblyTypeName: DrinkMenuUI, Assembly-CSharp
+        m_MethodName: AddDrink
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u041D\u0430\u043F\u0438\u0442\u043E\u043A 1"
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2068094769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10430,10 +10674,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 136387459}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 136387463}
+        m_TargetAssemblyTypeName: TableMenuUI, Assembly-CSharp
+        m_MethodName: CloseMenu
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -10896,6 +11140,3 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1159078979}
-  - {fileID: 427334189}
-  - {fileID: 1026145884}
-  - {fileID: 266648317}
