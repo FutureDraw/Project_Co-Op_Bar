@@ -49,10 +49,31 @@ public class OrderManager : MonoBehaviour
         Debug.Log($"Print: Table={selectedTable}, Drinks={drinks.Count}");
 
         if (CdTicketPrefab != null && CdTicketSpawnPoint != null)
-            Instantiate(CdTicketPrefab, CdTicketSpawnPoint.position, CdTicketPrefab.transform.rotation);
-        else
-            Debug.LogError("CdTicketPrefab или CdTicketSpawnPoint не назначены!");
+        {
+            GameObject newCd = Instantiate(
+                CdTicketPrefab,
+                CdTicketSpawnPoint.position,
+                CdTicketPrefab.transform.rotation
+            );
 
+            // запись данных на тикет
+            CdTicket ticket = newCd.GetComponent<CdTicket>();
+            if (ticket != null)
+            {
+                ticket.tableNumber = selectedTable;
+                ticket.drinks = new Dictionary<string, int>(drinks);
+            }
+            else
+            {
+                Debug.LogError("В префабе CdTicketPrefab НЕТ компонента CdTicket!");
+            }
+        }
+        else
+        {
+            Debug.LogError("CdTicketPrefab или CdTicketSpawnPoint не назначены!");
+        }
+
+        // Сброс данных
         drinks.Clear();
         selectedTable = -1;
 
