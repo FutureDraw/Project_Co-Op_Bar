@@ -49,7 +49,7 @@ public class OrderManager : MonoBehaviour
         Debug.Log($"Print: Table={selectedTable}, Drinks={drinks.Count}");
 
         if (CdTicketPrefab != null && CdTicketSpawnPoint != null)
-            Instantiate(CdTicketPrefab, CdTicketSpawnPoint.position, Quaternion.identity);
+            Instantiate(CdTicketPrefab, CdTicketSpawnPoint.position, CdTicketPrefab.transform.rotation);
         else
             Debug.LogError("CdTicketPrefab или CdTicketSpawnPoint не назначены!");
 
