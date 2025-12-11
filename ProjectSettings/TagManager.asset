@@ -9,6 +9,9 @@ TagManager:
   - Anchor
   - PlayerHand
   - Destroyer
+  - Ground
+  - Wall
+  - Obstacle
   layers:
   - Default
   - TransparentFX
@@ -18,8 +21,8 @@ TagManager:
   - UI
   - Player
   - Mirror
-  - 
-  - 
+  - Ground
+  - Wall
   - 
   - 
   - 
