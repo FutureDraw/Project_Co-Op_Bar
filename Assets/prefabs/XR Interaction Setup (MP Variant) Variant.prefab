@@ -123,10 +123,40 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3290026652430557585, guid: 77ac6b10722bcca4a8baf70e44d89e78,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3567973929603364839, guid: 77ac6b10722bcca4a8baf70e44d89e78,
+        type: 3}
+      propertyPath: m_RayInteractors.Array.data[1].m_Interactor
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3567973929603364839, guid: 77ac6b10722bcca4a8baf70e44d89e78,
+        type: 3}
+      propertyPath: m_RayInteractors.Array.data[3].m_Interactor
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3650905337081058800, guid: 77ac6b10722bcca4a8baf70e44d89e78,
         type: 3}
       propertyPath: m_Value
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3856858767515338584, guid: 77ac6b10722bcca4a8baf70e44d89e78,
+        type: 3}
+      propertyPath: m_FacingExited.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3856858767515338584, guid: 77ac6b10722bcca4a8baf70e44d89e78,
+        type: 3}
+      propertyPath: m_FacingEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3897800453764792039, guid: 77ac6b10722bcca4a8baf70e44d89e78,
+        type: 3}
+      propertyPath: m_TeleportInteractor
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4155537854260005700, guid: 77ac6b10722bcca4a8baf70e44d89e78,
         type: 3}
@@ -157,6 +187,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4234064996909593292, guid: 77ac6b10722bcca4a8baf70e44d89e78,
+        type: 3}
+      propertyPath: m_TeleportInteractor
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4293411706219940244, guid: 77ac6b10722bcca4a8baf70e44d89e78,
         type: 3}
@@ -418,6 +453,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7483074553383071986, guid: 77ac6b10722bcca4a8baf70e44d89e78,
+        type: 3}
+      propertyPath: m_LocomotionVignetteProviders.Array.data[2].m_LocomotionProvider
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483074553383071986, guid: 77ac6b10722bcca4a8baf70e44d89e78,
+        type: 3}
+      propertyPath: m_LocomotionVignetteProviders.Array.data[3].m_LocomotionProvider
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7565494415570717466, guid: 77ac6b10722bcca4a8baf70e44d89e78,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -644,7 +689,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7170882263771015990, guid: 77ac6b10722bcca4a8baf70e44d89e78, type: 3}
+    - {fileID: 7655899750703961544, guid: 77ac6b10722bcca4a8baf70e44d89e78, type: 3}
+    - {fileID: 5777068131698123240, guid: 77ac6b10722bcca4a8baf70e44d89e78, type: 3}
+    - {fileID: 4789335000707454262, guid: 77ac6b10722bcca4a8baf70e44d89e78, type: 3}
+    - {fileID: 4994869976592028576, guid: 77ac6b10722bcca4a8baf70e44d89e78, type: 3}
+    - {fileID: 7483074553383071988, guid: 77ac6b10722bcca4a8baf70e44d89e78, type: 3}
+    - {fileID: 2560852569138781985, guid: 77ac6b10722bcca4a8baf70e44d89e78, type: 3}
+    - {fileID: 5925768202880952156, guid: 77ac6b10722bcca4a8baf70e44d89e78, type: 3}
+    - {fileID: 3210325729487142964, guid: 77ac6b10722bcca4a8baf70e44d89e78, type: 3}
+    - {fileID: 1646060278908075255, guid: 77ac6b10722bcca4a8baf70e44d89e78, type: 3}
+    - {fileID: 6171970600952445595, guid: 77ac6b10722bcca4a8baf70e44d89e78, type: 3}
+    - {fileID: 4137733475331141401, guid: 77ac6b10722bcca4a8baf70e44d89e78, type: 3}
+    - {fileID: 8383550645921242754, guid: 77ac6b10722bcca4a8baf70e44d89e78, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77ac6b10722bcca4a8baf70e44d89e78, type: 3}
