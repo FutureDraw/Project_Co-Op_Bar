@@ -704,5 +704,81 @@ PrefabInstance:
     - {fileID: 4137733475331141401, guid: 77ac6b10722bcca4a8baf70e44d89e78, type: 3}
     - {fileID: 8383550645921242754, guid: 77ac6b10722bcca4a8baf70e44d89e78, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3371305651509318980, guid: 77ac6b10722bcca4a8baf70e44d89e78,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 369541487382986936}
   m_SourcePrefab: {fileID: 100100000, guid: 77ac6b10722bcca4a8baf70e44d89e78, type: 3}
+--- !u!114 &4298857345520591944 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2917872609362357213, guid: 77ac6b10722bcca4a8baf70e44d89e78,
+    type: 3}
+  m_PrefabInstance: {fileID: 1429548008822263701}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa7b4195685c3846be746c74f0ab2f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &4404396155527305937 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3371305651509318980, guid: 77ac6b10722bcca4a8baf70e44d89e78,
+    type: 3}
+  m_PrefabInstance: {fileID: 1429548008822263701}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &369541487382986936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4404396155527305937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48e02cb733613a54f8bb8f11656f2c25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDash
+  m_Mediator: {fileID: 4298857345520591944}
+  m_TransformationPriority: 0
+  m_DashInput:
+    m_InputSourceMode: 2
+    m_InputActionPerformed:
+      m_Name: Dash
+      m_Type: 1
+      m_ExpectedControlType: 
+      m_Id: 67de3e8e-c891-44c3-be0e-8a96a7ede69d
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_InputActionValue:
+      m_Name: Dash Value
+      m_Type: 0
+      m_ExpectedControlType: Axis
+      m_Id: 15415f06-4383-4f0d-8ef0-f679cddba062
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_InputActionReferencePerformed: {fileID: 0}
+    m_InputActionReferenceValue: {fileID: 0}
+    m_ObjectReferenceObject: {fileID: 0}
+    m_ManualPerformed: 0
+    m_ManualValue: 0
+    m_ManualQueuePerformed: 0
+    m_ManualQueueWasPerformedThisFrame: 0
+    m_ManualQueueWasCompletedThisFrame: 0
+    m_ManualQueueValue: 0
+    m_ManualQueueTargetFrame: 0
+  m_NormalSpeed: 1.5
+  m_DashMultiplier: 5
+  m_DashDuration: 0.2
+  m_HeadTransform: {fileID: 7462073928944098657}
+--- !u!4 &7462073928944098657 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8383550645295993588, guid: 77ac6b10722bcca4a8baf70e44d89e78,
+    type: 3}
+  m_PrefabInstance: {fileID: 1429548008822263701}
+  m_PrefabAsset: {fileID: 0}

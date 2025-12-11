@@ -561,6 +561,51 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 94228586331919884, guid: 83aff00cabe4deb428b927b09fa9fee1,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 94228586331919884, guid: 83aff00cabe4deb428b927b09fa9fee1,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 94228586331919884, guid: 83aff00cabe4deb428b927b09fa9fee1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 276016476738224781, guid: 83aff00cabe4deb428b927b09fa9fee1,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 276016476738224781, guid: 83aff00cabe4deb428b927b09fa9fee1,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 276016476738224781, guid: 83aff00cabe4deb428b927b09fa9fee1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 276016476738224781, guid: 83aff00cabe4deb428b927b09fa9fee1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 369541487382986936, guid: 83aff00cabe4deb428b927b09fa9fee1,
+        type: 3}
+      propertyPath: m_DashInput.m_InputActionReferenceValue
+      value: 
+      objectReference: {fileID: 1983851258}
+    - target: {fileID: 369541487382986936, guid: 83aff00cabe4deb428b927b09fa9fee1,
+        type: 3}
+      propertyPath: m_DashInput.m_InputActionReferencePerformed
+      value: 
+      objectReference: {fileID: 1575177936}
     - target: {fileID: 1072088141683221299, guid: 83aff00cabe4deb428b927b09fa9fee1,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -636,6 +681,26 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3061790231459824849, guid: 83aff00cabe4deb428b927b09fa9fee1,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3061790231459824849, guid: 83aff00cabe4deb428b927b09fa9fee1,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3061790231459824849, guid: 83aff00cabe4deb428b927b09fa9fee1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3061790231459824849, guid: 83aff00cabe4deb428b927b09fa9fee1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4110105505396434336, guid: 83aff00cabe4deb428b927b09fa9fee1,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -644,6 +709,26 @@ PrefabInstance:
     - target: {fileID: 4110105505396434336, guid: 83aff00cabe4deb428b927b09fa9fee1,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6064947196164740216, guid: 83aff00cabe4deb428b927b09fa9fee1,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6064947196164740216, guid: 83aff00cabe4deb428b927b09fa9fee1,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6064947196164740216, guid: 83aff00cabe4deb428b927b09fa9fee1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6064947196164740216, guid: 83aff00cabe4deb428b927b09fa9fee1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6900920104968297016, guid: 83aff00cabe4deb428b927b09fa9fee1,
@@ -876,6 +961,26 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -23
       objectReference: {fileID: 0}
+    - target: {fileID: 8445612083694350447, guid: 83aff00cabe4deb428b927b09fa9fee1,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8445612083694350447, guid: 83aff00cabe4deb428b927b09fa9fee1,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8445612083694350447, guid: 83aff00cabe4deb428b927b09fa9fee1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8445612083694350447, guid: 83aff00cabe4deb428b927b09fa9fee1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8822491947524227668, guid: 83aff00cabe4deb428b927b09fa9fee1,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -961,6 +1066,20 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83aff00cabe4deb428b927b09fa9fee1, type: 3}
+--- !u!114 &1575177936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
+  m_Name: XRI Right Locomotion/Dash
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
+  m_Asset: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  m_ActionId: 46203006-4a2f-4a83-b212-41686cf4f621
 --- !u!1001 &1702293293
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1194,6 +1313,20 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8facdd3c95c491246b06bf020cf1ce19, type: 3}
+--- !u!114 &1983851258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
+  m_Name: XRI Right Locomotion/Dash
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
+  m_Asset: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  m_ActionId: 46203006-4a2f-4a83-b212-41686cf4f621
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

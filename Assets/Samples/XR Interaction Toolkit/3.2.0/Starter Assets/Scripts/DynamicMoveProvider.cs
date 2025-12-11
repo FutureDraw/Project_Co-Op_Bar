@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Unity.XR.CoreUtils;
 using UnityEngine.Assertions;
 using UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement;
@@ -11,6 +12,21 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
     /// </summary>
     public class DynamicMoveProvider : ContinuousMoveProvider
     {
+        // ---- DASH SETTINGS ----
+        [SerializeField]
+        float dashMultiplier = 5f;
+
+        [SerializeField]
+        float dashDuration = 0.2f;
+
+        bool isDashing = false;
+        float dashEndTime = 0f;
+        Vector3 dashDirection = Vector3.zero;
+
+        // Для XR-ввода
+        UnityEngine.XR.InputDevice dashController;
+        bool dashButtonPrev = false;
+
         /// <summary>
         /// Defines which transform the XR Origin's movement direction is relative to.
         /// </summary>
@@ -111,9 +127,25 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
             forwardSource = m_CombinedTransform;
         }
 
+        void TryInitDashController()
+        {
+            if (dashController.isValid) return;
+
+            var devices = new List<UnityEngine.XR.InputDevice>();
+            UnityEngine.XR.InputDevices.GetDevicesWithCharacteristics(
+                UnityEngine.XR.InputDeviceCharacteristics.Right |
+                UnityEngine.XR.InputDeviceCharacteristics.Controller, devices);
+
+            if (devices.Count > 0)
+                dashController = devices[0];
+        }
+
+
         /// <inheritdoc />
         protected override Vector3 ComputeDesiredMove(Vector2 input)
         {
+            if (isDashing)
+                return dashDirection;
             // Don't need to do anything if the total input is zero.
             // This is the same check as the base method.
             if (input == Vector2.zero)
@@ -186,5 +218,43 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
 
             return base.ComputeDesiredMove(input);
         }
+
+        protected void Update()
+        {
+            base.Update();
+            HandleDashInput();
+        }
+
+        void HandleDashInput()
+        {
+            TryInitDashController();
+            if (!dashController.isValid) return;
+
+            bool pressed;
+            if (dashController.TryGetFeatureValue(UnityEngine.XR.CommonUsages.primaryButton, out pressed))
+            {
+                if (pressed && !dashButtonPrev)
+                    StartDash();
+
+                dashButtonPrev = pressed;
+            }
+
+            if (isDashing && Time.time >= dashEndTime)
+                isDashing = false;
+        }
+
+        void StartDash()
+        {
+            Transform cam = m_HeadTransform;
+            if (cam == null) return;
+
+            var forward = Vector3.ProjectOnPlane(cam.forward, Vector3.up).normalized;
+            if (forward.sqrMagnitude < 0.001f) return;
+
+            dashDirection = forward * dashMultiplier;
+            isDashing = true;
+            dashEndTime = Time.time + dashDuration;
+        }
+
     }
 }
