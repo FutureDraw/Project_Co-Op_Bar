@@ -964,11 +964,11 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 1
   windowsGamepadBackendHint: 0
-  cloudProjectId: 9b32a57b-ea1e-462c-9753-f807afff3eff
+  cloudProjectId: da6fb286-76ea-423a-a72a-9d63d4a7694e
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: Project_Co-Op_Bar
-  organizationId: fururedraw
+  organizationId: khanlimon2907
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
