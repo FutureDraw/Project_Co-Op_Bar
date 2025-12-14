@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.XR.Content.Interaction;
 
 public class XRLeverDualRowIndicators : MonoBehaviour
 {
@@ -18,13 +19,29 @@ public class XRLeverDualRowIndicators : MonoBehaviour
     [SerializeField] Color m_YellowColor = Color.yellow;
     [SerializeField] Color m_RedColor = Color.red;
 
-    IndicatorMode m_Mode;
-    int m_CurrentIndex = -1;
+    [Header("Initial State")]
+    [SerializeField] IndicatorMode m_InitialMode = IndicatorMode.Green;
+    [SerializeField] int m_InitialIndex = 0;
 
-    void Awake()
+    [Header("Lever Sync")]
+    [SerializeField] XRLeverAdvancedSmooth m_Lever;
+
+    IndicatorMode m_Mode;
+    int m_CurrentIndex;
+
+    void Start()
     {
-        ResetAll();
+        m_Mode = m_InitialMode;
+        m_CurrentIndex = m_InitialIndex;
+
+        // 1️⃣ сначала индикаторы
+        Refresh();
+
+        // 2️⃣ потом рычаг
+        if (m_Lever != null)
+            m_Lever.SetInitialPositionByIndex(m_CurrentIndex);
     }
+
 
     // вызывается рычагом
     public void SetIndex(int index)
@@ -33,34 +50,28 @@ public class XRLeverDualRowIndicators : MonoBehaviour
         Refresh();
     }
 
+    // вызывается кнопкой / логикой
+    public void SetMode(int mode)
+    {
+        m_Mode = (IndicatorMode)Mathf.Clamp(mode, 0, 2);
+        Refresh();
+    }
+
     void Refresh()
     {
-        UpdateRow(
-            m_GreenRow,
-            m_Mode == IndicatorMode.Green ? m_CurrentIndex : -1,
-            m_GreenColor
-        );
-
-        UpdateRow(
-            m_YellowRow,
-            m_Mode == IndicatorMode.Yellow ? m_CurrentIndex : -1,
-            m_YellowColor
-        );
-    }
-
-    void UpdateRow(Renderer[] row, int activeIndex, Color activeColor)
-    {
-        for (int i = 0; i < row.Length; i++)
+        // Зелёный ряд
+        for (int i = 0; i < m_GreenRow.Length; i++)
         {
-            bool isActive = (i == activeIndex);
-            ApplyColor(row[i], isActive ? activeColor : m_RedColor);
+            bool active = (m_Mode == IndicatorMode.Green && i == m_CurrentIndex);
+            ApplyColor(m_GreenRow[i], active ? m_GreenColor : m_RedColor);
         }
-    }
 
-    void ResetAll()
-    {
-        UpdateRow(m_GreenRow, -1, m_GreenColor);
-        UpdateRow(m_YellowRow, -1, m_YellowColor);
+        // Жёлтый ряд
+        for (int i = 0; i < m_YellowRow.Length; i++)
+        {
+            bool active = (m_Mode == IndicatorMode.Yellow && i == m_CurrentIndex);
+            ApplyColor(m_YellowRow[i], active ? m_YellowColor : m_RedColor);
+        }
     }
 
     void ApplyColor(Renderer r, Color color)

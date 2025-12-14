@@ -180,5 +180,18 @@ namespace UnityEngine.XR.Content.Interaction
             if (m_Handle != null)
                 m_Handle.localRotation = Quaternion.Euler(angle, 0f, 0f);
         }
+
+        public void SetInitialPositionByIndex(int index)
+        {
+            if (m_Positions == null || m_Positions.Length == 0)
+                return;
+
+            index = Mathf.Clamp(index, 0, m_Positions.Length - 1);
+
+            // мгновенно, без плавности и событий
+            StopAllCoroutines();
+            SetHandleAngle(m_Positions[index]);
+        }
+
     }
 }
