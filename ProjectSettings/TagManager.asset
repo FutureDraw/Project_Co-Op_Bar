@@ -12,6 +12,7 @@ TagManager:
   - Ground
   - Wall
   - Obstacle
+  - Teleportable
   layers:
   - Default
   - TransparentFX
