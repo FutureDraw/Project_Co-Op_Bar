@@ -59,8 +59,8 @@ public class XRLeverDualRowIndicators : MonoBehaviour
 
     void ResetAll()
     {
-        UpdateRow(m_GreenRow, 1, m_GreenColor);
-        UpdateRow(m_YellowRow, 1, m_YellowColor);
+        UpdateRow(m_GreenRow, -1, m_GreenColor);
+        UpdateRow(m_YellowRow, -1, m_YellowColor);
     }
 
     void ApplyColor(Renderer r, Color color)
