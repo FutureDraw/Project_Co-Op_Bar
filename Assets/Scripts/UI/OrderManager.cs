@@ -73,6 +73,12 @@ public class OrderManager : MonoBehaviour
             Debug.LogError("CdTicketPrefab или CdTicketSpawnPoint не назначены!");
         }
 
+        // —брос всех кнопок столов через Singleton
+        if (TableMenuUI.Instance != null)
+        {
+            TableMenuUI.Instance.ResetTableSelection();
+        }
+
         // —брос данных
         drinks.Clear();
         selectedTable = -1;
@@ -83,4 +89,6 @@ public class OrderManager : MonoBehaviour
 
         FindObjectOfType<MainMenuUI>().UpdatePrintButton();
     }
+
+
 }
