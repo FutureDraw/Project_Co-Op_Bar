@@ -1949,6 +1949,8 @@ GameObject:
   - component: {fileID: 7239335015899436828}
   - component: {fileID: 1891999231591150386}
   - component: {fileID: 4369246300812467619}
+  - component: {fileID: 8121027336057179344}
+  - component: {fileID: 5463548697044359467}
   m_Layer: 0
   m_Name: spillzone
   m_TagString: Untagged
@@ -1965,7 +1967,7 @@ Transform:
   m_GameObject: {fileID: 4015103456969492935}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.087, y: 0.643, z: -0.016}
+  m_LocalPosition: {x: -0.075, y: 0.615, z: 0.019}
   m_LocalScale: {x: 0.60402, y: 0.34552962, z: 0.60402}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2047,7 +2049,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.21550712, y: 0.85437655, z: 0.24679488}
+  m_Size: {x: 0.3, y: 0.84, z: 0.3}
   m_Center: {x: 0.030261273, y: -0.07281177, z: 0.043868806}
 --- !u!114 &4369246300812467619
 MonoBehaviour:
@@ -2062,6 +2064,67 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PourTrigger
   pouringSystem: {fileID: 3864032452551738887}
+--- !u!114 &8121027336057179344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4015103456969492935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60523e0647cc6ab43acc73cb266a32a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor
+  m_InteractionManager: {fileID: 0}
+  m_InteractionLayers:
+    m_Bits: 4294967295
+  m_Handedness: 0
+  m_AttachTransform: {fileID: 8139591017039063902}
+  m_KeepSelectedTargetValid: 1
+  m_DisableVisualsWhenBlockedInGroup: 1
+  m_StartingSelectedInteractable: {fileID: 0}
+  m_StartingTargetFilter: {fileID: 0}
+  m_AutoFindParentInteractableInHierarchy: 0
+  m_ParentInteractableObject: {fileID: 0}
+  m_HoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_StartingHoverFilters: []
+  m_StartingSelectFilters: []
+  m_ShowInteractableHoverMeshes: 0
+  m_InteractableHoverMeshMaterial: {fileID: 0}
+  m_InteractableCantHoverMeshMaterial: {fileID: 0}
+  m_SocketActive: 1
+  m_InteractableHoverScale: 1
+  m_RecycleDelayTime: 1
+  m_HoverSocketSnapping: 1
+  m_SocketSnappingRadius: 1
+  m_SocketScaleMode: 0
+  m_FixedScale: {x: 1, y: 1, z: 1}
+  m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+--- !u!114 &5463548697044359467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4015103456969492935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5abeeeda2c026f4981c504976a74954, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: VRMP::XRMultiplayer.NetworkSocketInteractor
+  ShowTopMostFoldoutHeaderGroup: 1
 --- !u!1 &4131161883955329296
 GameObject:
   m_ObjectHideFlags: 0
@@ -3036,7 +3099,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7573372884353624589}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.41, y: 1.206, z: -6.08}
   m_LocalScale: {x: 0.32118, y: 0.32118, z: 0.32118}
   m_ConstrainProportionsScale: 0
@@ -3765,7 +3828,7 @@ PrefabInstance:
     - target: {fileID: 3998249300725087110, guid: e1cc11d4b72ccac4ea4e17c432ff5cb1,
         type: 3}
       propertyPath: GlobalObjectIdHash
-      value: 1322993911
+      value: 9409421
       objectReference: {fileID: 0}
     - target: {fileID: 3998249300725087110, guid: e1cc11d4b72ccac4ea4e17c432ff5cb1,
         type: 3}
@@ -4304,7 +4367,7 @@ PrefabInstance:
     - target: {fileID: 3565561301179955727, guid: 7657662442c770a429781fa32abfe41d,
         type: 3}
       propertyPath: GlobalObjectIdHash
-      value: 3190766727
+      value: 2919211423
       objectReference: {fileID: 0}
     - target: {fileID: 3565561301179955727, guid: 7657662442c770a429781fa32abfe41d,
         type: 3}
