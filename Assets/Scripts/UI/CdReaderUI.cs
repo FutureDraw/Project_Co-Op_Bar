@@ -6,8 +6,8 @@ public class CdReaderUI : MonoBehaviour
     public TMP_Text tableText;
     public TMP_Text recipeText;
 
-    public Transform drinkListParent;    
-    public GameObject drinkItemPrefab; 
+    public Transform drinkListParent;
+    public GameObject drinkItemPrefab;
 
     private CdReaderMachine machineRef;
 
@@ -19,47 +19,40 @@ public class CdReaderUI : MonoBehaviour
 
         tableText.text = "Стол: " + ticket.tableNumber;
 
-        foreach (Transform ch in drinkListParent)
-            Destroy(ch.gameObject);
+        ClearDrinkList();
 
         foreach (var kv in ticket.drinks)
         {
             GameObject item = Instantiate(drinkItemPrefab, drinkListParent);
             DrinkItemUI di = item.GetComponent<DrinkItemUI>();
-            di.SetData(kv.Key, kv.Value, this); // передаем ссылку на UI
+            di.SetData(kv.Key, kv.Value, this);
         }
 
         recipeText.text = "";
     }
 
-    public void Hide()
-    {
-        gameObject.SetActive(false);
-    }
-
-    public void SetMachineRef(CdReaderMachine m)
-    {
-        machineRef = m;
-    }
-
     public void ClearData()
+    {
+        ClearDrinkList();
+        if (tableText != null) tableText.text = "";
+        if (recipeText != null) recipeText.text = "";
+    }
+
+    private void ClearDrinkList()
     {
         foreach (Transform ch in drinkListParent)
             Destroy(ch.gameObject);
-
-        if (recipeText != null)
-            recipeText.text = "";
-
-        if (tableText != null)
-            tableText.text = "";
     }
 
     public void OnEjectButtonPressed()
     {
-        if (machineRef == null) return;
+        if (machineRef == null)
+        {
+            Debug.LogWarning("CdReaderUI: machineRef is NULL");
+            return;
+        }
 
-        CdTicket ejected = machineRef.Eject();
-
+        machineRef.Eject();
         ClearData();
     }
 
@@ -73,5 +66,10 @@ public class CdReaderUI : MonoBehaviour
 
         string recipe = RecipeDatabase.Instance.GetRecipe(drinkName);
         recipeText.text = $"<b>{drinkName}</b>\n\n{recipe}";
+    }
+
+    public void SetMachineRef(CdReaderMachine m)
+    {
+        machineRef = m;
     }
 }
