@@ -12834,6 +12834,7 @@ MeshFilter:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1076306821}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &1076306825
@@ -12852,6 +12853,11 @@ Transform:
   m_Father: {fileID: 908760756}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1079483667
+=======
+  m_GameObject: {fileID: 1034343438}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1054943064
+>>>>>>> parent of 691621d (Добавил доделанный UI на сцену)
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13587,6 +13593,7 @@ MonoBehaviour:
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: fb5992ae20b8bcf47b1dd6350541d17e, type: 2}
   m_BuildHeightMesh: 0
+<<<<<<< HEAD
 --- !u!1 &1101948969
 GameObject:
   m_ObjectHideFlags: 0
@@ -13701,6 +13708,8 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1101948969}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+=======
+>>>>>>> parent of 691621d (Добавил доделанный UI на сцену)
 --- !u!4 &1114463895 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5661811504244104396, guid: e1cc11d4b72ccac4ea4e17c432ff5cb1,
@@ -25747,4 +25756,3 @@ SceneRoots:
   - {fileID: 694038299793554825}
   - {fileID: 1082857225}
   - {fileID: 212013885}
-  - {fileID: 1045543168}
