@@ -1,67 +1,103 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class CdReaderMachine : MonoBehaviour
 {
     [Header("References")]
     public Transform cdSlot;
+    public Transform ejectPoint;
     public CdReaderUI ui;
     public Collider insertTrigger;
 
     private CdTicket currentTicket;
 
+
+    private void Awake()
+    {
+        if (ui != null)
+            ui.SetMachineRef(this);
+    }
+
+    // Вставка диска
     public bool TryInsert(CdTicket ticket)
     {
-        if (ticket == null) return false;
-        if (currentTicket != null) return false;
+        if (ticket == null || currentTicket != null) return false;
 
         currentTicket = ticket;
 
-        ticket.transform.position = cdSlot.position;
-        ticket.transform.rotation = cdSlot.rotation;
-        ticket.transform.SetParent(cdSlot, true);
+        StartCoroutine(FixSlotInsert(ticket));
 
-        Rigidbody rb = ticket.GetComponent<Rigidbody>();
-        if (rb) rb.isKinematic = true;
-
-        Collider col = ticket.GetComponent<Collider>();
-        if (col) col.enabled = false;
-
-        ui.ShowTicketData(ticket);
+        if (ui != null)
+            ui.ShowTicketData(ticket);
 
         return true;
     }
 
-    public CdTicket Eject()
+    private IEnumerator FixSlotInsert(CdTicket ticket)
     {
-        if (currentTicket == null) return null;
+        ticket.transform.SetParent(cdSlot);
+        ticket.transform.localPosition = Vector3.zero;
+        ticket.transform.localRotation = Quaternion.identity;
+
+        yield return new WaitForFixedUpdate();
+
+        XRGrabInteractable grab = ticket.GetComponent<XRGrabInteractable>();
+        if (grab) grab.enabled = false;
+
+        Collider col = ticket.GetComponent<Collider>();
+        if (col) col.enabled = false;
+
+        Rigidbody rb = ticket.GetComponent<Rigidbody>();
+        if (rb) rb.isKinematic = true;
+    }
+
+    public void Eject()
+    {
+        if (currentTicket == null) return;
 
         CdTicket ticket = currentTicket;
         currentTicket = null;
 
-        ui.Hide();
+        if (ejectPoint != null)
+            ticket.transform.position = ejectPoint.position;
+        ticket.transform.rotation = ejectPoint.rotation;
+        ticket.transform.SetParent(null);
 
-        Rigidbody rb = ticket.GetComponent<Rigidbody>();
-        if (rb) rb.isKinematic = false;
+        XRGrabInteractable grab = ticket.GetComponent<XRGrabInteractable>();
+        if (grab) grab.enabled = true;
 
         Collider col = ticket.GetComponent<Collider>();
         if (col) col.enabled = true;
 
-        ticket.transform.SetParent(null, true);
+        Rigidbody rb = ticket.GetComponent<Rigidbody>();
+        if (rb != null)
+            StartCoroutine(EnablePhysicsNextFrame(rb));
 
-        ticket.transform.position = cdSlot.position + cdSlot.forward * 0.5f;
-
-        return ticket;
+        if (ui != null)
+            ui.ClearData();
     }
 
-    public bool HasTicket() => currentTicket != null;
+    private IEnumerator EnablePhysicsNextFrame(Rigidbody rb)
+    {
+        yield return new WaitForFixedUpdate();
+        rb.isKinematic = false;
+    }
+
+    public bool HasTicket()
+    {
+        return currentTicket != null;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (currentTicket != null) return;
-        CdTicket t = other.GetComponent<CdTicket>();
-        if (t != null)
+
+        CdTicket ticket = other.GetComponent<CdTicket>();
+        if (ticket != null)
         {
-            TryInsert(t);
+            TryInsert(ticket);
         }
     }
 }

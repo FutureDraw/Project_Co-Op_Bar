@@ -767,6 +767,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TableMenuUI
   nextPageBtn: {fileID: 328539298}
   printBtn: {fileID: 1645649105}
+  tableButtons:
+  - {fileID: 878713801}
+  - {fileID: 229398849}
+  - {fileID: 1916406762}
+  - {fileID: 520345785}
+  - {fileID: 1566363384}
+  - {fileID: 391243938}
+  - {fileID: 1554911070}
+  - {fileID: 1015450338}
+  - {fileID: 1570422612}
+  - {fileID: 724714660}
 --- !u!1 &140896976
 GameObject:
   m_ObjectHideFlags: 0
@@ -1177,6 +1188,7 @@ GameObject:
   - component: {fileID: 229398851}
   - component: {fileID: 229398850}
   - component: {fileID: 229398849}
+  - component: {fileID: 229398852}
   m_Layer: 5
   m_Name: Table2Button
   m_TagString: Untagged
@@ -1298,6 +1310,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 229398847}
   m_CullTransparentMesh: 1
+--- !u!114 &229398852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229398847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4951a22f67c9eea489dbd51f4d68c8a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TableButton
+  tableId: 2
 --- !u!1 &266648315
 GameObject:
   m_ObjectHideFlags: 0
@@ -2033,6 +2058,7 @@ GameObject:
   - component: {fileID: 391243940}
   - component: {fileID: 391243939}
   - component: {fileID: 391243938}
+  - component: {fileID: 391243941}
   m_Layer: 5
   m_Name: Table6Button
   m_TagString: Untagged
@@ -2154,6 +2180,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 391243936}
   m_CullTransparentMesh: 1
+--- !u!114 &391243941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 391243936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4951a22f67c9eea489dbd51f4d68c8a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TableButton
+  tableId: 6
 --- !u!1 &427334186
 GameObject:
   m_ObjectHideFlags: 0
@@ -2390,6 +2429,7 @@ GameObject:
   - component: {fileID: 520345787}
   - component: {fileID: 520345786}
   - component: {fileID: 520345785}
+  - component: {fileID: 520345788}
   m_Layer: 5
   m_Name: Table4Button
   m_TagString: Untagged
@@ -2511,6 +2551,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 520345783}
   m_CullTransparentMesh: 1
+--- !u!114 &520345788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520345783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4951a22f67c9eea489dbd51f4d68c8a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TableButton
+  tableId: 4
 --- !u!1 &529047611
 GameObject:
   m_ObjectHideFlags: 0
@@ -2921,7 +2974,7 @@ GameObject:
   - component: {fileID: 556902501}
   - component: {fileID: 556902500}
   m_Layer: 5
-  m_Name: BackgroundPanel
+  m_Name: TerminalUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4220,6 +4273,7 @@ GameObject:
   - component: {fileID: 724714662}
   - component: {fileID: 724714661}
   - component: {fileID: 724714660}
+  - component: {fileID: 724714663}
   m_Layer: 5
   m_Name: Table10Button
   m_TagString: Untagged
@@ -4341,6 +4395,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 724714658}
   m_CullTransparentMesh: 1
+--- !u!114 &724714663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724714658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4951a22f67c9eea489dbd51f4d68c8a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TableButton
+  tableId: 10
 --- !u!1 &725760878
 GameObject:
   m_ObjectHideFlags: 0
@@ -4627,6 +4694,7 @@ GameObject:
   - component: {fileID: 878713803}
   - component: {fileID: 878713802}
   - component: {fileID: 878713801}
+  - component: {fileID: 878713804}
   m_Layer: 5
   m_Name: Table1Button
   m_TagString: Untagged
@@ -4748,6 +4816,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 878713799}
   m_CullTransparentMesh: 1
+--- !u!114 &878713804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878713799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4951a22f67c9eea489dbd51f4d68c8a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TableButton
+  tableId: 1
 --- !u!1 &936176263
 GameObject:
   m_ObjectHideFlags: 0
@@ -5061,6 +5142,7 @@ GameObject:
   - component: {fileID: 1015450340}
   - component: {fileID: 1015450339}
   - component: {fileID: 1015450338}
+  - component: {fileID: 1015450341}
   m_Layer: 5
   m_Name: Table8Button
   m_TagString: Untagged
@@ -5182,6 +5264,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1015450336}
   m_CullTransparentMesh: 1
+--- !u!114 &1015450341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1015450336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4951a22f67c9eea489dbd51f4d68c8a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TableButton
+  tableId: 8
 --- !u!1 &1020547652
 GameObject:
   m_ObjectHideFlags: 0
@@ -5790,8 +5885,8 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1159078975}
-  m_LocalRotation: {x: 0.2181396, y: -0, z: -0, w: 0.9759176}
-  m_LocalPosition: {x: 0, y: 0, z: -6.946}
+  m_LocalRotation: {x: 0.15425055, y: 0.69007736, z: -0.15425055, w: 0.69007736}
+  m_LocalPosition: {x: 0, y: 0, z: -3.604}
   m_LocalScale: {x: 0.0003, y: 0.0003, z: 0.0003}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -5800,10 +5895,10 @@ RectTransform:
   - {fileID: 266648317}
   - {fileID: 936176264}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 25.2, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 25.2, y: 90, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -1.796, y: 1.394}
+  m_AnchoredPosition: {x: 7.336, y: 0.887}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1159078980
@@ -7676,6 +7771,7 @@ GameObject:
   - component: {fileID: 1554911072}
   - component: {fileID: 1554911071}
   - component: {fileID: 1554911070}
+  - component: {fileID: 1554911073}
   m_Layer: 5
   m_Name: Table7Button
   m_TagString: Untagged
@@ -7797,6 +7893,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1554911068}
   m_CullTransparentMesh: 1
+--- !u!114 &1554911073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554911068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4951a22f67c9eea489dbd51f4d68c8a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TableButton
+  tableId: 7
 --- !u!1 &1561998838
 GameObject:
   m_ObjectHideFlags: 0
@@ -7946,6 +8055,7 @@ GameObject:
   - component: {fileID: 1566363386}
   - component: {fileID: 1566363385}
   - component: {fileID: 1566363384}
+  - component: {fileID: 1566363387}
   m_Layer: 5
   m_Name: Table5Button
   m_TagString: Untagged
@@ -8067,6 +8177,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1566363382}
   m_CullTransparentMesh: 1
+--- !u!114 &1566363387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566363382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4951a22f67c9eea489dbd51f4d68c8a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TableButton
+  tableId: 5
 --- !u!1 &1570422610
 GameObject:
   m_ObjectHideFlags: 0
@@ -8079,6 +8202,7 @@ GameObject:
   - component: {fileID: 1570422614}
   - component: {fileID: 1570422613}
   - component: {fileID: 1570422612}
+  - component: {fileID: 1570422615}
   m_Layer: 5
   m_Name: Table9Button
   m_TagString: Untagged
@@ -8200,6 +8324,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1570422610}
   m_CullTransparentMesh: 1
+--- !u!114 &1570422615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570422610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4951a22f67c9eea489dbd51f4d68c8a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TableButton
+  tableId: 9
 --- !u!1 &1579254966
 GameObject:
   m_ObjectHideFlags: 0
@@ -9926,6 +10063,7 @@ GameObject:
   - component: {fileID: 1916406764}
   - component: {fileID: 1916406763}
   - component: {fileID: 1916406762}
+  - component: {fileID: 1916406765}
   m_Layer: 5
   m_Name: Table3Button
   m_TagString: Untagged
@@ -10047,6 +10185,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1916406760}
   m_CullTransparentMesh: 1
+--- !u!114 &1916406765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916406760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4951a22f67c9eea489dbd51f4d68c8a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TableButton
+  tableId: 3
 --- !u!1 &2008276438
 GameObject:
   m_ObjectHideFlags: 0
