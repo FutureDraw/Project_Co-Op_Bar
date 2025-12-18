@@ -8,6 +8,8 @@ public class Teleporter : MonoBehaviour
     public string teleportableTag = "Teleportable"; // Тег телепортируемых объектов
     public Collider teleportZone; // Зона телепортации
 
+    [SerializeField] private TeleportSyncSystem syncSystem;
+
     private int selectedTargetIndex = 0;
 
     private List<GameObject> objectsInZone = new List<GameObject>();
@@ -44,6 +46,11 @@ public class Teleporter : MonoBehaviour
 
     public void TeleportObjects()
     {
+        if (!syncSystem.IsTeleportAllowed())
+            return;
+
+        int index = syncSystem.GetSyncedIndex();
+
         Debug.Log($"tp try {objectsInZone}");
         foreach (var obj in objectsInZone)
         {
