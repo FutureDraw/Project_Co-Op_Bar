@@ -56,30 +56,31 @@ public class OrderManager : MonoBehaviour
                 CdTicketPrefab.transform.rotation
             );
 
-            // запись данных на тикет
+            // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
             CdTicket ticket = newCd.GetComponent<CdTicket>();
             if (ticket != null)
             {
                 ticket.tableNumber = selectedTable;
                 ticket.drinks = new Dictionary<string, int>(drinks);
+                ticket.isUsed = false;
             }
             else
             {
-                Debug.LogError("В префабе CdTicketPrefab НЕТ компонента CdTicket!");
+                Debug.LogError("пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ CdTicketPrefab пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ CdTicket!");
             }
         }
         else
         {
-            Debug.LogError("CdTicketPrefab или CdTicketSpawnPoint не назначены!");
+            Debug.LogError("CdTicketPrefab пїЅпїЅпїЅ CdTicketSpawnPoint пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ!");
         }
 
-        // Сброс всех кнопок столов через Singleton
+        // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ Singleton
         if (TableMenuUI.Instance != null)
         {
             TableMenuUI.Instance.ResetTableSelection();
         }
 
-        // Сброс данных
+        // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         drinks.Clear();
         selectedTable = -1;
 

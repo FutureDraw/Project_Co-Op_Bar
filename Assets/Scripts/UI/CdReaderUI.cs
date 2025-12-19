@@ -17,7 +17,7 @@ public class CdReaderUI : MonoBehaviour
 
         gameObject.SetActive(true);
 
-        tableText.text = "Стол: " + ticket.tableNumber;
+        tableText.text = "пїЅпїЅпїЅпїЅ: " + ticket.tableNumber;
 
         ClearDrinkList();
 
@@ -60,7 +60,7 @@ public class CdReaderUI : MonoBehaviour
     {
         if (RecipeDatabase.Instance == null)
         {
-            recipeText.text = $"Рецепт: {drinkName}";
+            recipeText.text = $"пїЅпїЅпїЅпїЅпїЅпїЅ: {drinkName}";
             return;
         }
 
