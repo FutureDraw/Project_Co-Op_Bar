@@ -23,7 +23,7 @@ public class CdReaderMachine : MonoBehaviour
 
     public bool TryInsert(CdTicket ticket)
     {
-        if (ticket == null || currentTicket != null)
+        if (ticket == null || currentTicket != null || ticket.isUsed == true)
             return false;
 
         currentTicket = ticket;
@@ -58,6 +58,8 @@ public class CdReaderMachine : MonoBehaviour
 
         var rb = ticket.GetComponent<Rigidbody>();
         if (rb) rb.isKinematic = false;
+
+        ticket.isUsed = true;
 
         if (ui != null)
             ui.ClearData();
@@ -97,7 +99,7 @@ public class CdReaderMachine : MonoBehaviour
     {
 
         CdTicket ticket = currentTicket;
-        currentTicket = null;
+        
 
         if (ejectPoint != null)
             ticket.transform.position = ejectPoint.position;
@@ -116,6 +118,8 @@ public class CdReaderMachine : MonoBehaviour
 
         if (ui != null)
             ui.ClearData();
+
+        currentTicket = null;
     }
 
     private IEnumerator EnablePhysicsNextFrame(Rigidbody rb)
