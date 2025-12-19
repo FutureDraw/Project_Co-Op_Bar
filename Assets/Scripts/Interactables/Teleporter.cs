@@ -1,47 +1,33 @@
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class Teleporter : MonoBehaviour
 {
-    [Header("Настройки")]
-    public Transform[] teleportTargets; // Возможные точки
-    public string teleportableTag = "Teleportable"; // Тег телепортируемых объектов
-    public Collider teleportZone; // Зона телепортации
+    [Header("Common teleport")]
+    [SerializeField] private Transform[] teleportTargets;
 
-    [SerializeField] private TeleportSyncSystem syncSystem;
+    [Header("Ticket teleport")]
+    [SerializeField] private Transform[] tableTeleportPoints;
+    [SerializeField] private int ticketModeIndex = 3;
 
-    private int selectedTargetIndex = 0;
+    [Header("Systems")]
+    [SerializeField] public TeleportSyncSystem syncSystem;
+    [SerializeField] public CdReaderMachine reader;
 
-    private List<GameObject> objectsInZone = new List<GameObject>();
+    [Header("Rules")]
+    [SerializeField] private string consumeTicketTag = "Glass";
+
+    private readonly List<GameObject> objectsInZone = new();
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("trigger enter");
-        if (other.CompareTag(teleportableTag))
-        {
-            Debug.Log("Nice tag");
-            if (!objectsInZone.Contains(other.gameObject)) {
-                objectsInZone.Add(other.gameObject);
-                Debug.Log("add");
-            }
-            Debug.Log("trig");
-        }
+        if (!objectsInZone.Contains(other.gameObject))
+            objectsInZone.Add(other.gameObject);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (objectsInZone.Contains(other.gameObject)) { 
-            objectsInZone.Remove(other.gameObject);
-            Debug.Log("Remove");
-        }
-    }
-
-    public void SelectTarget(int index)
-    {
-        if (index >= 0 && index < teleportTargets.Length)
-            selectedTargetIndex = index;
-        else
-            Debug.LogWarning("Индекс точки телепортации вне диапазона");
+        objectsInZone.Remove(other.gameObject);
     }
 
     public void TeleportObjects()
@@ -49,13 +35,46 @@ public class Teleporter : MonoBehaviour
         if (!syncSystem.IsTeleportAllowed())
             return;
 
-        int index = syncSystem.GetSyncedIndex();
+        int mode = syncSystem.GetSyncedIndex();
 
-        Debug.Log($"tp try {objectsInZone}");
         foreach (var obj in objectsInZone)
         {
-            obj.transform.position = teleportTargets[selectedTargetIndex].position;
-            Debug.Log("tp");
+            if (mode == ticketModeIndex)
+                TeleportByTicket(obj);
+            else
+                TeleportNormally(obj, mode);
+        }
+    }
+
+    private void TeleportNormally(GameObject obj, int index)
+    {
+        if (index < 0 || index >= teleportTargets.Length)
+            return;
+
+        obj.transform.position = teleportTargets[index].position;
+        obj.transform.rotation = teleportTargets[index].rotation;
+    }
+
+    private void TeleportByTicket(GameObject obj)
+    {
+        // режим 3 без тикета
+        if (!reader.HasTicket())
+            return;
+
+        int tableNumber = reader.GetTableNumber();
+        int tableIndex = tableNumber - 1;
+
+        if (tableIndex < 0 || tableIndex >= tableTeleportPoints.Length)
+            return;
+
+        obj.transform.position = tableTeleportPoints[tableIndex].position;
+        obj.transform.rotation = tableTeleportPoints[tableIndex].rotation;
+
+        // использовать тикет ТОЛЬКО если это Glass
+        if (obj.CompareTag(consumeTicketTag))
+        {
+            reader.ConsumeTicket();
+            Debug.Log("consume");
         }
     }
 }

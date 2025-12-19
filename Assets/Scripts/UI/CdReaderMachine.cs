@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class CdReaderMachine : MonoBehaviour
@@ -9,30 +8,61 @@ public class CdReaderMachine : MonoBehaviour
     public Transform cdSlot;
     public Transform ejectPoint;
     public CdReaderUI ui;
-    public Collider insertTrigger;
 
-    private CdTicket currentTicket;
+    public CdTicket currentTicket;
 
-
-    private void Awake()
+    public bool HasTicket()
     {
-        if (ui != null)
-            ui.SetMachineRef(this);
+        return currentTicket != null;
     }
 
-    // Вставка диска
+    public int GetTableNumber()
+    {
+        return currentTicket != null ? currentTicket.tableNumber : -1;
+    }
+
     public bool TryInsert(CdTicket ticket)
     {
-        if (ticket == null || currentTicket != null) return false;
+        if (ticket == null || currentTicket != null)
+            return false;
 
         currentTicket = ticket;
-
         StartCoroutine(FixSlotInsert(ticket));
 
         if (ui != null)
             ui.ShowTicketData(ticket);
 
         return true;
+    }
+
+    public void ConsumeTicket()
+    {
+        if (currentTicket == null)
+            return;
+
+        Debug.Log("consume by reader " + currentTicket);
+
+        CdTicket ticket = currentTicket;
+ 
+        if (ejectPoint != null)
+            ticket.transform.position = ejectPoint.position;
+
+        ticket.transform.rotation = ejectPoint.rotation;
+        ticket.transform.SetParent(null);
+
+        var grab = ticket.GetComponent<XRGrabInteractable>();
+        if (grab) grab.enabled = true;
+
+        var col = ticket.GetComponent<Collider>();
+        if (col) col.enabled = true;
+
+        var rb = ticket.GetComponent<Rigidbody>();
+        if (rb) rb.isKinematic = false;
+
+        if (ui != null)
+            ui.ClearData();
+
+        currentTicket = null;
     }
 
     private IEnumerator FixSlotInsert(CdTicket ticket)
@@ -43,19 +73,28 @@ public class CdReaderMachine : MonoBehaviour
 
         yield return new WaitForFixedUpdate();
 
-        XRGrabInteractable grab = ticket.GetComponent<XRGrabInteractable>();
+        var grab = ticket.GetComponent<XRGrabInteractable>();
         if (grab) grab.enabled = false;
 
-        Collider col = ticket.GetComponent<Collider>();
+        var col = ticket.GetComponent<Collider>();
         if (col) col.enabled = false;
 
-        Rigidbody rb = ticket.GetComponent<Rigidbody>();
+        var rb = ticket.GetComponent<Rigidbody>();
         if (rb) rb.isKinematic = true;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (currentTicket != null)
+            return;
+
+        CdTicket ticket = other.GetComponent<CdTicket>();
+        if (ticket != null)
+            TryInsert(ticket);
     }
 
     public void Eject()
     {
-        if (currentTicket == null) return;
 
         CdTicket ticket = currentTicket;
         currentTicket = null;
@@ -85,19 +124,4 @@ public class CdReaderMachine : MonoBehaviour
         rb.isKinematic = false;
     }
 
-    public bool HasTicket()
-    {
-        return currentTicket != null;
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (currentTicket != null) return;
-
-        CdTicket ticket = other.GetComponent<CdTicket>();
-        if (ticket != null)
-        {
-            TryInsert(ticket);
-        }
-    }
 }
