@@ -17,7 +17,7 @@ public class CdReaderUI : MonoBehaviour
 
         gameObject.SetActive(true);
 
-        tableText.text = "����: " + ticket.tableNumber;
+        tableText.text = "Стол: " + ticket.tableNumber;
 
         ClearDrinkList();
 
