@@ -9,5 +9,6 @@ public class TeleportLever : MonoBehaviour, ITeleportSelector
     public void SelectTarget(int index)
     {
         selectedIndex = index;
+        Debug.Log("index " + index);
     }
 }
