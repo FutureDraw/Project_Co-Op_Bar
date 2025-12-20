@@ -2508,7 +2508,7 @@ PrefabInstance:
     - target: {fileID: 2425016105918668578, guid: 6787aba866ea9b7408bb133231bb6c88,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2425016105918668588, guid: 6787aba866ea9b7408bb133231bb6c88,
         type: 3}
@@ -5590,7 +5590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15912832c9e426245834cd0d28598bda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TeleportSyncSystem
-  leverA: {fileID: 2014132073}
+  leverA: {fileID: 2207524549609352016}
   leverB: {fileID: 538437397}
 --- !u!4 &447159423
 Transform:
@@ -6646,18 +6646,6 @@ MonoBehaviour:
       - m_Target: {fileID: 1544394976}
         m_TargetAssemblyTypeName: LeverDrivenMover, Assembly-CSharp
         m_MethodName: MoveToIndex
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1079483670}
-        m_TargetAssemblyTypeName: Teleporter, Assembly-CSharp
-        m_MethodName: SelectTarget
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -25457,18 +25445,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 780399526}
-        m_TargetAssemblyTypeName: Teleporter, Assembly-CSharp
-        m_MethodName: SelectTarget
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 2014132073}
         m_TargetAssemblyTypeName: TeleportLever, Assembly-CSharp
         m_MethodName: SelectTarget
@@ -27379,7 +27355,7 @@ Transform:
   m_GameObject: {fileID: 1578902328325124599}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 9.982695, y: -0.044999998, z: -8.420663}
+  m_LocalPosition: {x: 10.626, y: -0.044999998, z: -9.224}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -27524,8 +27500,8 @@ MonoBehaviour:
   m_StartingInteractionStrengthFilters: []
   m_AutoFindParentInteractableInHierarchy: 0
   m_ParentInteractableObject: {fileID: 0}
-  m_Handle: {fileID: 231499321}
-  m_InteractorSnapTransform: {fileID: 231499320}
+  m_Handle: {fileID: 8253377819502651086}
+  m_InteractorSnapTransform: {fileID: 8395074955274694642}
   m_Mode: 0
   m_MinAngle: -50
   m_MaxAngle: 40
@@ -27550,19 +27526,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 780399526}
-        m_TargetAssemblyTypeName: Teleporter, Assembly-CSharp
-        m_MethodName: SelectTarget
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 231499325}
+      - m_Target: {fileID: 2207524549609352016}
         m_TargetAssemblyTypeName: TeleportLever, Assembly-CSharp
         m_MethodName: SelectTarget
         m_Mode: 0
