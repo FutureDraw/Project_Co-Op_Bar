@@ -198,7 +198,6 @@ GameObject:
   - component: {fileID: 719866063239968963}
   - component: {fileID: 5566409715755317879}
   - component: {fileID: 1670062642406040537}
-  - component: {fileID: 5381271767143642697}
   - component: {fileID: 4987716670031811446}
   - component: {fileID: 2185112936015717383}
   m_Layer: 0
@@ -470,7 +469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 2325671098
+  GlobalObjectIdHash: 4186232715
   InScenePlacedSourceGlobalObjectIdHash: 426834193
   DeferredDespawnTick: 0
   Ownership: 1
@@ -581,27 +580,6 @@ MonoBehaviour:
   m_AllowCollisionOwnershipExchange: 1
   m_MinExchangeVelocityMagitude: 0.025
   spawnLocked: 1
---- !u!65 &5381271767143642697
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7289318914190743487}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0.0000076293945, y: 0, z: 0}
 --- !u!114 &4987716670031811446
 MonoBehaviour:
   m_ObjectHideFlags: 0
