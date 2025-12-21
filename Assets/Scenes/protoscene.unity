@@ -5689,6 +5689,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 517763915}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &541260197 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5791194992080968433, guid: 8248e924379d94248bfcc2cbc517b520,
+    type: 3}
+  m_PrefabInstance: {fileID: 4722754974047806919}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &544717475
 GameObject:
   m_ObjectHideFlags: 0
@@ -10201,12 +10207,31 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 4722754974047806919}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 541260197}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72d98f0b66b66834aaae261b71456cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CdReaderMachine
+--- !u!114 &837325124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541260197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1a147df6f79fd14b93ec5994c16bf1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TicketWatcher
+  ticketSource: {fileID: 837325122}
+  lever: {fileID: 5584517746808496731}
+  button1: {fileID: 3392596589778406134}
+  button2: {fileID: 2299729438092079451}
+  knob: {fileID: 2424056349010180754}
+  indicatorRenderer: {fileID: 7705413288314997486}
+  fadeSpeed: 2
 --- !u!1 &838421968
 GameObject:
   m_ObjectHideFlags: 0
@@ -32377,7 +32402,11 @@ PrefabInstance:
         type: 3}
       insertIndex: 3
       addedObject: {fileID: 3618344866199253546}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5791194992080968433, guid: 8248e924379d94248bfcc2cbc517b520,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 837325124}
   m_SourcePrefab: {fileID: 100100000, guid: 8248e924379d94248bfcc2cbc517b520, type: 3}
 --- !u!114 &4728053547786993658
 MonoBehaviour:
@@ -35337,7 +35366,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9163c921dcd4dc0458e3f9d688fae020, type: 2}
+  - {fileID: 2100000, guid: 25da043fcf4343f4982d7e26e9ca167b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
