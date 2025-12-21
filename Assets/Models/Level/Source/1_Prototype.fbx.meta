@@ -3,7 +3,27 @@ guid: c773419319873084f86732c399e8a06e
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_GridUVCeiling
+    second: {fileID: 2100000, guid: b526ea00a573f8f449ee3d5770320f6f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_GridUVFloor
+    second: {fileID: 2100000, guid: 67ac2d0d6da546a4bb5991758140dd1e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_GridUVProp
+    second: {fileID: 2100000, guid: fe946c967323324428d460bf5960e5f5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_GridUVWall
+    second: {fileID: 2100000, guid: b0a81d6077dc9904ca87f596bc123bbf, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
