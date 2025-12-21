@@ -15,9 +15,10 @@ public class TableManager : MonoBehaviour
     {
         foreach (var table in tables)
         {
-            if (!table.isOccupied)
+            if (table.IsFree())
                 return table;
         }
         return null;
     }
+
 }
