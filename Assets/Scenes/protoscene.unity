@@ -10502,6 +10502,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4722754974047806919}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &837325122 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2710275060629510365, guid: 8248e924379d94248bfcc2cbc517b520,
+    type: 3}
+  m_PrefabInstance: {fileID: 4722754974047806919}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72d98f0b66b66834aaae261b71456cf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CdReaderMachine
 --- !u!1 &838421968
 GameObject:
   m_ObjectHideFlags: 0
@@ -27336,6 +27348,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 62188381083792769, guid: 230a253845c377443aa8ef5800e13716,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7578868984806496291, guid: 230a253845c377443aa8ef5800e13716,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -27397,7 +27414,8 @@ PrefabInstance:
       value: TerminalWaiter
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3424617158517180099, guid: 230a253845c377443aa8ef5800e13716, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 230a253845c377443aa8ef5800e13716, type: 3}
@@ -27792,6 +27810,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: TerminalBar
       objectReference: {fileID: 0}
+    - target: {fileID: 7094260373962338715, guid: 8248e924379d94248bfcc2cbc517b520,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7739471001058083376, guid: 8248e924379d94248bfcc2cbc517b520,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 837325122}
+    - target: {fileID: 7739471001058083376, guid: 8248e924379d94248bfcc2cbc517b520,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Eject
+      objectReference: {fileID: 0}
+    - target: {fileID: 7739471001058083376, guid: 8248e924379d94248bfcc2cbc517b520,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CdReaderMachine, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 8328177351643224197, guid: 8248e924379d94248bfcc2cbc517b520,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -27800,7 +27838,7 @@ PrefabInstance:
     - target: {fileID: 8328177351643224197, guid: 8248e924379d94248bfcc2cbc517b520,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.8841
+      value: 1.339
       objectReference: {fileID: 0}
     - target: {fileID: 8328177351643224197, guid: 8248e924379d94248bfcc2cbc517b520,
         type: 3}
