@@ -99,7 +99,7 @@ PlayerSettings:
   bakeCollisionMeshes: 1
   forceSingleInstance: 0
   useFlipModelSwapchain: 1
-  resizableWindow: 0
+  resizableWindow: 1
   useMacAppStoreValidation: 0
   macAppStoreCategory: public.app-category.games
   gpuSkinning: 1
@@ -546,7 +546,10 @@ PlayerSettings:
       m_Height: 720
       m_Kind: 1
       m_SubKind: 
-  m_BuildTargetBatching: []
+  m_BuildTargetBatching:
+  - m_BuildTarget: Standalone
+    m_StaticBatching: 1
+    m_DynamicBatching: 0
   m_BuildTargetShaderSettings: []
   m_BuildTargetGraphicsJobs: []
   m_BuildTargetGraphicsJobMode: []
@@ -964,10 +967,10 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 1
   windowsGamepadBackendHint: 0
-  cloudProjectId: 82cf8879-f1bc-4dd8-814d-76a73c4b1248
+  cloudProjectId: 80d1bf90-73fb-4c0a-9233-67941710ceca
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Project_Co-Op_Bar (2)
+  projectName: Project_Co-Op_Bar (5)
   organizationId: khanlimon2907
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
