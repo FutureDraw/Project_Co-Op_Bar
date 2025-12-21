@@ -13,9 +13,18 @@ public class ClientAI : MonoBehaviour
     private NavMeshAgent agent;
     private Table currentTable;
 
+    [Header("Spawn / Exit")]
+    public Transform spawnPoint;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+
+        if (spawnPoint != null)
+        {
+            transform.position = spawnPoint.position;
+        }
+
         EnterState(ClientState.FreeSeat);
     }
 
@@ -35,6 +44,10 @@ public class ClientAI : MonoBehaviour
 
             case ClientState.Ordering:
                 UpdateOrdering();
+                break;
+            
+            case ClientState.Served:
+                UpdateLeaving();
                 break;
         }
     }
@@ -66,7 +79,8 @@ public class ClientAI : MonoBehaviour
         if (timer <= 0)
         {
             OrderScaleManager.Instance.AddPoints(-10);
-            Destroy(gameObject);
+
+            Leave(false);
         }
     }
 
@@ -83,7 +97,42 @@ public class ClientAI : MonoBehaviour
         if (timer <= 0)
         {
             OrderScaleManager.Instance.AddPoints(-15);
-            currentTable.Free();
+            Leave(false);
+        }
+    }
+
+    void Leave(bool wasServed)
+    {
+        if (currentTable != null)
+        {
+            currentTable.SpawnMainTrash();
+
+            if (!wasServed)
+            {
+                int extraTrash = Random.Range(0, 3);
+                // Можно спавнить мусор вручную, если нужно
+                for (int i = 0; i < extraTrash; i++)
+                {
+                    Vector3 pos = currentTable.transform.position + Random.insideUnitSphere * 1.2f;
+                    pos.y = currentTable.transform.position.y;
+
+                    GameObject t = Instantiate(currentTable.trashPrefab, pos, Quaternion.identity);
+                    Trash trash = t.GetComponent<Trash>();
+                    trash.blocksTable = false; // не блокирует стол
+                }
+            }
+
+            //currentTable.Free();
+        }
+
+        agent.SetDestination(spawnPoint.position);
+        state = ClientState.Served;
+    }
+
+    void UpdateLeaving()
+    {
+        if (!agent.pathPending && agent.remainingDistance < 0.2f)
+        {
             Destroy(gameObject);
         }
     }
