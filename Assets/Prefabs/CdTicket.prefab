@@ -26,7 +26,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f52fc7297b0a8894098be6dd080a2e8d,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f52fc7297b0a8894098be6dd080a2e8d,
         type: 3}
@@ -36,7 +36,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f52fc7297b0a8894098be6dd080a2e8d,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f52fc7297b0a8894098be6dd080a2e8d,
         type: 3}
@@ -51,7 +51,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f52fc7297b0a8894098be6dd080a2e8d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f52fc7297b0a8894098be6dd080a2e8d,
         type: 3}
@@ -103,6 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CdTicket
   tableNumber: 0
+  isUsed: 0
 --- !u!54 &4360470404506584977
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -53,7 +53,7 @@ public class OrderManager : MonoBehaviour
             GameObject newCd = Instantiate(
                 CdTicketPrefab,
                 CdTicketSpawnPoint.position,
-                CdTicketPrefab.transform.rotation
+                CdTicketSpawnPoint.transform.rotation
             );
 
             // ������ ������ �� �����
