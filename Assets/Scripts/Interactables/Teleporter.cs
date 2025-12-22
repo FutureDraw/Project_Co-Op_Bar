@@ -1,7 +1,8 @@
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
-public class Teleporter : MonoBehaviour
+public class Teleporter : NetworkBehaviour
 {
     [Header("Common teleport")]
     [SerializeField] private Transform[] teleportTargets;

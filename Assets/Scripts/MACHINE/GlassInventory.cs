@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
 [System.Serializable]
@@ -9,7 +10,7 @@ public class DrinkRecord
     public float volumeMl;
 }
 
-public class GlassInventory : MonoBehaviour
+public class GlassInventory : NetworkBehaviour
 {
     public List<DrinkRecord> contents = new List<DrinkRecord>();
 

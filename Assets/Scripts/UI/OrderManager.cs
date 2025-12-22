@@ -1,19 +1,23 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 
-public class OrderManager : MonoBehaviour
+public class OrderManager : NetworkBehaviour
 {
     public static OrderManager Instance;
 
+    // Заказ
     public Dictionary<string, int> drinks = new Dictionary<string, int>();
     public int selectedTable = -1;
 
-    public GameObject CdTicketPrefab;
-    public Transform CdTicketSpawnPoint;
+    // CdTicket
+    [SerializeField] private GameObject CdTicketPrefab;
+    [SerializeField] private Transform CdTicketSpawnPoint;
 
-    public GameObject mainPanel;
-    public GameObject drinkMenu;
-    public GameObject tableMenu;
+    // UI
+    [SerializeField] private GameObject mainPanel;
+    [SerializeField] private GameObject drinkMenu;
+    [SerializeField] private GameObject tableMenu;
 
     private void Awake()
     {
@@ -21,22 +25,18 @@ public class OrderManager : MonoBehaviour
         else Destroy(gameObject);
     }
 
+    // ------------------ ЛОГИКА ЗАКАЗА ------------------
+
     public void AddDrink(string drinkName)
     {
         if (drinks.ContainsKey(drinkName))
             drinks[drinkName]++;
         else
-            drinks[drinkName] = 1;
-    }
-
-    public int GetDrinkCount(string drinkName)
-    {
-        return drinks.ContainsKey(drinkName) ? drinks[drinkName] : 0;
+            drinks.Add(drinkName, 1);
     }
 
     public bool HasAnyDrinks() => drinks.Count > 0;
     public bool HasTable() => selectedTable != -1;
-
     public bool ReadyToPrint() => HasAnyDrinks() && HasTable();
 
     public void SelectTable(int table)
@@ -44,45 +44,22 @@ public class OrderManager : MonoBehaviour
         selectedTable = table;
     }
 
+    public int GetDrinkCount(string drinkName) { return drinks.ContainsKey(drinkName) ? drinks[drinkName] : 0; }
+
+    // ------------------ ПЕЧАТЬ ------------------
+
     public void PrintOrder()
     {
-        Debug.Log($"Print: Table={selectedTable}, Drinks={drinks.Count}");
+        if (!ReadyToPrint()) return;
 
-        if (CdTicketPrefab != null && CdTicketSpawnPoint != null)
-        {
-            GameObject newCd = Instantiate(
-                CdTicketPrefab,
-                CdTicketSpawnPoint.position,
-                CdTicketSpawnPoint.transform.rotation
-            );
+        PrintOrderServerRpc(selectedTable);
 
-            // ������ ������ �� �����
-            CdTicket ticket = newCd.GetComponent<CdTicket>();
-            if (ticket != null)
-            {
-                ticket.tableNumber = selectedTable;
-                ticket.drinks = new Dictionary<string, int>(drinks);
-                ticket.isUsed = false;
-            }
-            else
-            {
-                Debug.LogError("� ������� CdTicketPrefab ��� ���������� CdTicket!");
-            }
-        }
-        else
-        {
-            Debug.LogError("CdTicketPrefab ��� CdTicketSpawnPoint �� ���������!");
-        }
-
-        // ����� ���� ������ ������ ����� Singleton
-        if (TableMenuUI.Instance != null)
-        {
-            TableMenuUI.Instance.ResetTableSelection();
-        }
-
-        // ����� ������
+        // очистка локального UI
         drinks.Clear();
         selectedTable = -1;
+
+        if (TableMenuUI.Instance != null)
+            TableMenuUI.Instance.ResetTableSelection();
 
         mainPanel.SetActive(true);
         drinkMenu.SetActive(false);
@@ -91,5 +68,45 @@ public class OrderManager : MonoBehaviour
         FindObjectOfType<MainMenuUI>().UpdatePrintButton();
     }
 
+    // ------------------ SERVER RPC ------------------
 
+    [ServerRpc(RequireOwnership = false)]
+    private void PrintOrderServerRpc(int table)
+    {
+        if (CdTicketPrefab == null)
+        {
+            Debug.LogError("CdTicketPrefab == null (на сервере)");
+            return;
+        }
+
+        if (CdTicketSpawnPoint == null)
+        {
+            Debug.LogError("CdTicketSpawnPoint == null (на сервере)");
+            return;
+        }
+
+        GameObject cd = Instantiate(
+            CdTicketPrefab,
+            CdTicketSpawnPoint.position,
+            CdTicketSpawnPoint.rotation
+        );
+
+        NetworkObject netObj = cd.GetComponent<NetworkObject>();
+        if (netObj == null)
+        {
+            Debug.LogError("На CdTicketPrefab нет NetworkObject!");
+            Destroy(cd);
+            return;
+        }
+
+        netObj.Spawn();
+
+        CdTicket ticket = netObj.GetComponent<CdTicket>();
+        if (ticket != null)
+        {
+            ticket.tableNumber = selectedTable;
+            ticket.drinks = new Dictionary<string, int>(drinks);
+            ticket.isUsed = false;
+        }
+    }
 }

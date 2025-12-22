@@ -1,7 +1,8 @@
 using UnityEngine;
 using System.Collections;
+using Unity.Netcode;
 
-public class LeverDrivenMover : MonoBehaviour
+public class LeverDrivenMover : NetworkBehaviour
 {
     [Header("Target Points (same count as lever positions)")]
     [SerializeField] Transform[] m_TargetPoints;
