@@ -7,14 +7,9 @@ namespace UnityEngine.XR.Interaction.Toolkit.Locomotion.Dash
 {
     public class DashProvider : LocomotionProvider
     {
-        [Header("Input")]
         [SerializeField]
         XRInputButtonReader m_DashInput = new XRInputButtonReader("Dash");
 
-        [SerializeField]
-        XRInputValueReader<Vector2> m_MoveInput = new XRInputValueReader<Vector2>("Move");
-
-        [Header("Settings")]
         [SerializeField]
         float m_NormalSpeed = 1.5f;
 
@@ -25,32 +20,27 @@ namespace UnityEngine.XR.Interaction.Toolkit.Locomotion.Dash
         float m_DashDuration = 0.2f;
 
         [SerializeField]
-        float m_Cooldown = 1.0f;
-
-        [SerializeField]
-        AnimationCurve m_AccelCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
-
-        [Header("References")]
-        [SerializeField]
         Transform m_HeadTransform;
+
+        [SerializeField]
+        float m_DashDistance = 1.2f;
+
+        [SerializeField]
+        XRInputValueReader<Vector2> m_MoveInput = new XRInputValueReader<Vector2>("Move");
 
         public XROriginMovement transformation { get; set; } = new XROriginMovement();
 
         bool m_IsDashing;
-        bool m_CooldownActive;
         float m_Timer;
-        float m_CooldownTimer;
 
         void OnEnable()
         {
             m_DashInput.EnableDirectActionIfModeUsed();
-            m_MoveInput.EnableDirectActionIfModeUsed();
         }
 
         void OnDisable()
         {
             m_DashInput.DisableDirectActionIfModeUsed();
-            m_MoveInput.DisableDirectActionIfModeUsed();
         }
 
         void Update()
@@ -58,23 +48,11 @@ namespace UnityEngine.XR.Interaction.Toolkit.Locomotion.Dash
             if (!isActiveAndEnabled)
                 return;
 
-            HandleCooldown();
-
-            if (!m_IsDashing && !m_CooldownActive && m_DashInput.ReadWasPerformedThisFrame())
+            if (!m_IsDashing && m_DashInput.ReadWasPerformedThisFrame())
                 StartDash();
 
             if (m_IsDashing)
                 UpdateDash();
-        }
-
-        void HandleCooldown()
-        {
-            if (!m_CooldownActive)
-                return;
-
-            m_CooldownTimer += Time.deltaTime;
-            if (m_CooldownTimer >= m_Cooldown)
-                m_CooldownActive = false;
         }
 
         void StartDash()
@@ -94,40 +72,28 @@ namespace UnityEngine.XR.Interaction.Toolkit.Locomotion.Dash
             if (t >= 1f)
             {
                 m_IsDashing = false;
-                m_CooldownActive = true;
-                m_CooldownTimer = 0f;
                 return;
             }
 
-            // Кривая плавности
-            float curve = m_AccelCurve.Evaluate(t);
-
-            // Направление — движение или взгляд
-            Vector2 move = m_MoveInput.ReadValue();
             Vector3 dashDir;
+            Vector2 move = m_MoveInput.ReadValue();
 
             if (move.sqrMagnitude > 0.0001f)
             {
-                Vector3 f = m_HeadTransform.forward;
-                Vector3 r = m_HeadTransform.right;
-
-                f.y = 0;
-                r.y = 0;
-
-                f.Normalize();
-                r.Normalize();
-
-                dashDir = (f * move.y + r * move.x).normalized;
+                Vector3 forward = m_HeadTransform.forward;
+                Vector3 right = m_HeadTransform.right;
+                forward.y = right.y = 0f;
+                dashDir = (forward * move.y + right * move.x).normalized;
             }
             else
             {
                 dashDir = m_HeadTransform.forward;
-                dashDir.y = 0;
+                dashDir.y = 0f;
                 dashDir.Normalize();
             }
 
-            float speed = m_NormalSpeed * m_DashMultiplier * curve;
-            Vector3 motion = dashDir * speed * Time.deltaTime;
+            float step = (m_DashDistance / m_DashDuration) * Time.deltaTime;
+            Vector3 motion = dashDir * step;
 
             TryStartLocomotionImmediately();
             if (locomotionState != LocomotionState.Moving)
@@ -136,5 +102,7 @@ namespace UnityEngine.XR.Interaction.Toolkit.Locomotion.Dash
             transformation.motion = motion;
             TryQueueTransformation(transformation);
         }
+
+
     }
 }

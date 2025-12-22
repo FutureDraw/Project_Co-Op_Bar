@@ -1852,7 +1852,7 @@ Transform:
   m_GameObject: {fileID: 91905849}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 11.63, y: 0.98, z: -14.23}
+  m_LocalPosition: {x: 11.63, y: 0.98, z: -15.1}
   m_LocalScale: {x: 12.736601, y: 5.42, z: 0.14397}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2911,6 +2911,8 @@ GameObject:
   - component: {fileID: 202403110}
   - component: {fileID: 202403109}
   - component: {fileID: 202403108}
+  - component: {fileID: 202403112}
+  - component: {fileID: 202403111}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -2925,7 +2927,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 202403107}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
   m_Name: 
@@ -2990,6 +2992,106 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &202403111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202403107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a907ece591e731e49b5d7be45f089972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit.Samples.DeviceSimulator::UnityEngine.XR.Interaction.Toolkit.Samples.DeviceSimulator.XRDeviceSimulatorControllerUI
+  m_ControllerImage: {fileID: 0}
+  m_ControllerOverlayImage: {fileID: 0}
+  m_PrimaryButtonImage: {fileID: 0}
+  m_PrimaryButtonText: {fileID: 0}
+  m_PrimaryButtonIcon: {fileID: 0}
+  m_SecondaryButtonImage: {fileID: 0}
+  m_SecondaryButtonText: {fileID: 0}
+  m_SecondaryButtonIcon: {fileID: 0}
+  m_TriggerButtonImage: {fileID: 0}
+  m_TriggerButtonText: {fileID: 0}
+  m_TriggerButtonIcon: {fileID: 0}
+  m_GripButtonImage: {fileID: 0}
+  m_GripButtonText: {fileID: 0}
+  m_GripButtonIcon: {fileID: 0}
+  m_ThumbstickButtonImage: {fileID: 0}
+  m_ThumbstickButtonText: {fileID: 0}
+  m_ThumbstickButtonIcon: {fileID: 0}
+  m_MenuButtonImage: {fileID: 0}
+  m_MenuButtonText: {fileID: 0}
+  m_MenuButtonIcon: {fileID: 0}
+--- !u!114 &202403112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202403107}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8b922481d9264546b97958b2c7cf0a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit.Samples.DeviceSimulator::UnityEngine.XR.Interaction.Toolkit.Samples.DeviceSimulator.XRDeviceSimulatorUI
+  m_IsMenuOpen: 1
+  m_XRDeviceSimulatorMainPanel: {fileID: 0}
+  m_XRDeviceSimulatorCollapsedPanel: {fileID: 0}
+  m_HmdSpriteDark: {fileID: 0}
+  m_HmdSpriteLight: {fileID: 0}
+  m_KeyboardSprite: {fileID: 0}
+  m_MouseSprite: {fileID: 0}
+  m_RMouseSpriteDark: {fileID: 0}
+  m_RMouseSpriteLight: {fileID: 0}
+  m_RMouseSprite: {fileID: 0}
+  m_RoundedRectangle: {fileID: 0}
+  m_CycleDevicesText: {fileID: 0}
+  m_CurrentSelectedDeviceText: {fileID: 0}
+  m_HeadsetImage: {fileID: 0}
+  m_HeadsetMoveButton: {fileID: 0}
+  m_HeadsetMoveButtonIcon: {fileID: 0}
+  m_HeadsetMoveButtonText: {fileID: 0}
+  m_HeadsetMoveValueIcon: {fileID: 0}
+  m_HeadsetMoveValueText: {fileID: 0}
+  m_HeadsetLookButton: {fileID: 0}
+  m_HeadsetLookButtonText: {fileID: 0}
+  m_HeadsetLookValueIcon: {fileID: 0}
+  m_HeadsetLookValueText: {fileID: 0}
+  m_CursorLockButton: {fileID: 0}
+  m_CursorLockValueText: {fileID: 0}
+  m_MouseModeButtonText: {fileID: 0}
+  m_MouseModeValueText: {fileID: 0}
+  m_HeadsetSelectedButton: {fileID: 0}
+  m_HeadsetSelectedValueText: {fileID: 0}
+  m_ControllerSelectedButton: {fileID: 0}
+  m_ControllerSelectedIcon: {fileID: 0}
+  m_ControllerSelectedText: {fileID: 0}
+  m_ControllersSelectedValueText: {fileID: 0}
+  m_ControllersCanvasGroup: {fileID: 0}
+  m_LeftController: {fileID: 0}
+  m_LeftControllerButtonText: {fileID: 0}
+  m_RightController: {fileID: 0}
+  m_RightControllerButtonText: {fileID: 0}
+  m_HandsSelectedButton: {fileID: 0}
+  m_HandsSelectedIcon: {fileID: 0}
+  m_HandsSelectedText: {fileID: 0}
+  m_HandsSelectedValueIcon: {fileID: 0}
+  m_HandsSelectedValueText: {fileID: 0}
+  m_HandsCanvasGroup: {fileID: 0}
+  m_LeftHand: {fileID: 0}
+  m_LeftHandButtonText: {fileID: 0}
+  m_RightHand: {fileID: 0}
+  m_RightHandButtonText: {fileID: 0}
+  m_EnabledColor: {r: 0, g: 0, b: 0, a: 0}
+  m_DisabledColor: {r: 0, g: 0, b: 0, a: 0}
+  m_ButtonColor: {r: 0, g: 0, b: 0, a: 0}
+  m_DisabledButtonColor: {r: 0, g: 0, b: 0, a: 0}
+  m_SelectedColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackgroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_DeviceColor: {r: 0, g: 0, b: 0, a: 0}
+  m_DisabledDeviceColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &212013885
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3139,7 +3241,7 @@ MonoBehaviour:
   - "\u043D\u0430\u043F\u0438\u0442\u043E\u043A 2"
   - "\u043D\u0430\u043F\u0438\u0442\u043E\u043A 3"
   - "\u043D\u0430\u043F\u0438\u0442\u043E\u043A 4"
-  orderBubble: {fileID: 1919233975}
+  orderBubble: {fileID: 993066820}
   orderTextMesh: {fileID: 634346210}
   timerTextMesh: {fileID: 1438244141}
 --- !u!195 &212013889
@@ -3321,7 +3423,7 @@ PrefabInstance:
     - target: {fileID: 2425016105918668578, guid: 6787aba866ea9b7408bb133231bb6c88,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2425016105918668588, guid: 6787aba866ea9b7408bb133231bb6c88,
         type: 3}
@@ -21389,8 +21491,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 369541487382986936, guid: 83aff00cabe4deb428b927b09fa9fee1,
         type: 3}
+      propertyPath: m_DashDistance
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 369541487382986936, guid: 83aff00cabe4deb428b927b09fa9fee1,
+        type: 3}
       propertyPath: m_DashMultiplier
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 369541487382986936, guid: 83aff00cabe4deb428b927b09fa9fee1,
         type: 3}
