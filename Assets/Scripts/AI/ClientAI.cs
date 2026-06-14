@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 using TMPro;
+using UnityEngine.UI;
 
 public class ClientAI : MonoBehaviour
 {
@@ -15,6 +16,16 @@ public class ClientAI : MonoBehaviour
 
     private NavMeshAgent agent;
     private Table currentTable;
+
+
+    [Header("UI Circle Timer")]
+    public Image timerCircle;
+    private float currentMaxTime;
+
+    [Header("Timer Colors")]
+    public Color greenColor = Color.green;
+    public Color redColor = Color.red;
+
 
     [Header("Spawn / Exit")]
     public Transform spawnPoint;
@@ -60,7 +71,7 @@ public class ClientAI : MonoBehaviour
         timer -= Time.deltaTime;
 
         // 🔢 ОБНОВЛЯЕМ ТАЙМЕР ВСЕГДА
-        UpdateTimerText();
+        UpdateTimerUI();
 
         switch (state)
         {
@@ -91,11 +102,15 @@ public class ClientAI : MonoBehaviour
         state = newState;
 
         if (state == ClientState.FreeSeat)
+        {
             timer = waitForTableTime;
+            currentMaxTime = waitForTableTime;
+        }
 
         if (state == ClientState.Ordering)
         {
             timer = orderTime;
+            currentMaxTime = orderTime;
             GenerateOrder();
         }
     }
@@ -171,17 +186,32 @@ public class ClientAI : MonoBehaviour
     // =========================
     // ТАЙМЕР (ЧИСЛА)
     // =========================
-
-    void UpdateTimerText()
+    void UpdateTimerUI()
     {
         if (timer <= 0)
         {
+            if (timerCircle != null)
+            {
+                timerCircle.fillAmount = 0f;
+                timerCircle.color = Color.red;
+            }
+
             timerTextMesh.text = "";
             return;
         }
 
+        float progress = timer / currentMaxTime;
+
         int secondsLeft = Mathf.CeilToInt(timer);
         timerTextMesh.text = secondsLeft.ToString();
+
+        if (timerCircle != null)
+        {
+            timerCircle.fillAmount = progress;
+
+            // 🎯 ПЛАВНЫЙ ГРАДИЕНТ
+            timerCircle.color = Color.Lerp(Color.red, Color.green, progress);
+        }
     }
 
 
