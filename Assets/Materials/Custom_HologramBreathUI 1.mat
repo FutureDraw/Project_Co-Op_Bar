@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Custom_HologramBreathUI
+  m_Name: Custom_HologramBreathUI 1
   m_Shader: {fileID: 4800000, guid: 5f45d42b65e831c4fbdb6589e0360dc0, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -16,7 +16,7 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 2450
   stringTagMap: {}
   disabledShaderPasses: []
   m_LockedProperties: 
@@ -29,13 +29,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BreathAmount: 0.001
-    - _BreathSpeed: 0.8
+    - _BreathAmount: 0.002
+    - _BreathSpeed: 10
     - _EdgeGlitchStrength: 0
     - _EmissionStrength: 2
-    - _GlitchFrequency: 60
-    - _HorizontalGlitch: 0.009
+    - _GlitchFrequency: 31.2
+    - _HorizontalGlitch: 0
     m_Colors:
-    - _Color: {r: 0.70980394, g: 0.4156862, b: 0.16862735, a: 0.6039216}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
