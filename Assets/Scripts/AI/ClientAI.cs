@@ -208,8 +208,6 @@ public class ClientAI : MonoBehaviour
         if (timerCircle != null)
         {
             timerCircle.fillAmount = progress;
-
-            // 🎯 ПЛАВНЫЙ ГРАДИЕНТ
             timerCircle.color = Color.Lerp(Color.red, Color.green, progress);
         }
     }
