@@ -31,10 +31,10 @@ Material:
     m_Floats:
     - _BreathAmount: 0.002
     - _BreathSpeed: 10
-    - _EdgeGlitchStrength: 0
+    - _EdgeGlitchStrength: 0.004
     - _EmissionStrength: 2
-    - _GlitchFrequency: 31.2
-    - _HorizontalGlitch: 0
+    - _GlitchFrequency: 5
+    - _HorizontalGlitch: 0.028
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
