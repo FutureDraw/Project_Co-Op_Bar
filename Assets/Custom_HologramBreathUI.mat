@@ -16,7 +16,7 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 2450
   stringTagMap: {}
   disabledShaderPasses: []
   m_LockedProperties: 
@@ -31,10 +31,10 @@ Material:
     m_Floats:
     - _BreathAmount: 0.001
     - _BreathSpeed: 0.8
-    - _EdgeGlitchStrength: 0.1
-    - _EmissionStrength: 1.5
-    - _GlitchFrequency: 60
-    - _HorizontalGlitch: 0.65
+    - _EdgeGlitchStrength: 0.008
+    - _EmissionStrength: 2
+    - _GlitchFrequency: 5
+    - _HorizontalGlitch: 0.009
     m_Colors:
     - _Color: {r: 0.8207547, g: 0.46517026, b: 0.0038714935, a: 0.44705883}
   m_BuildTextureStacks: []
