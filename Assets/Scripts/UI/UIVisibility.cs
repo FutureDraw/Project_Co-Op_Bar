@@ -7,10 +7,17 @@ public class UIVisibility : MonoBehaviour
     public Canvas UI;
     public CanvasGroup UIGroup;
 
+    [Header("Objects that disappear")]
+    public GameObject[] objectsToHide;
+
     [Header("Distance settings (meters)")]
     public float fullyVisibleDistance = 0.30f; // 30 см
     public float fadeStartDistance = 0.40f;    // 40 см
     public float disableDistance = 0.50f;      // 50 см
+
+    [Header("Objects distance settings (meters)")]
+    public float objectsEnableDistance = 1.0f;
+    public float objectsDisableDistance = 1.0f;
 
     [Header("Camera")]
     public Camera playerCamera;
@@ -22,7 +29,8 @@ public class UIVisibility : MonoBehaviour
         if (playerCamera == null)
             playerCamera = Camera.main;
 
-        UI.gameObject.SetActive(false);
+        if (UI != null)
+            UI.gameObject.SetActive(false);
     }
 
     void Update()
@@ -35,19 +43,24 @@ public class UIVisibility : MonoBehaviour
             UI.transform.position
         );
 
-        // Полное отключение
         if (distance >= disableDistance)
         {
             if (UI.gameObject.activeSelf)
+            {
                 UI.gameObject.SetActive(false);
+                SetObjectsActive(false);
+            }
             return;
         }
 
-        // Включаем объект если подошли достаточно близко
         if (!UI.gameObject.activeSelf)
+        {
             UI.gameObject.SetActive(true);
+            SetObjectsActive(true);
+        }
 
         UpdateTransparency(distance);
+        UpdateObjectsDistance();
     }
 
     void UpdateTransparency(float distance)
@@ -60,7 +73,6 @@ public class UIVisibility : MonoBehaviour
         }
         else if (distance <= fadeStartDistance)
         {
-            // плавная интерполяция от 30см до 40см
             alpha = Mathf.InverseLerp(fadeStartDistance, fullyVisibleDistance, distance);
         }
         else
@@ -68,9 +80,41 @@ public class UIVisibility : MonoBehaviour
             alpha = 0f;
         }
 
-        Color c = baseColor;
-        c.a = alpha;
-        UIGroup.alpha = alpha;
+        if (UIGroup != null)
+        {
+            UIGroup.alpha = alpha;
+        }
+
+        Debug.Log($"Distance: {distance:F2} | Alpha: {alpha:F2}");
     }
 
+    void UpdateObjectsDistance()
+    {
+        if (objectsToHide == null || objectsToHide.Length == 0)
+            return;
+
+        foreach (GameObject obj in objectsToHide)
+        {
+            if (obj == null) continue;
+
+            float d = Vector3.Distance(playerCamera.transform.position, obj.transform.position);
+
+            bool shouldBeActive = d <= objectsEnableDistance;
+
+            if (obj.activeSelf != shouldBeActive)
+            {
+                obj.SetActive(shouldBeActive);
+            }
+        }
+    }
+
+    private void SetObjectsActive(bool active)
+    {
+        foreach (GameObject obj in objectsToHide)
+        {
+            if (obj != null)
+                obj.SetActive(active);
+        }
+    }
 }
+
